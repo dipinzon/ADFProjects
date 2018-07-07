@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SProductCategoriesView"
+  Version="12.1.2.65.37"
+  InheritPersonalization="merge"
+  SelectList="SProductCategories.ID, 
+       SProductCategories.CATEGORY, 
+       SProductCategories.PARENT_CATEGORY_ID"
+  FromList="S_PRODUCT_CATEGORIES SProductCategories"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="SProductCategories"
+    Entity="model.SProductCategories"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SProductCategories"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Category"
+    PrecisionRule="true"
+    EntityAttrName="Category"
+    EntityUsage="SProductCategories"
+    AliasName="CATEGORY"/>
+  <ViewAttribute
+    Name="ParentCategoryId"
+    PrecisionRule="true"
+    EntityAttrName="ParentCategoryId"
+    EntityUsage="SProductCategories"
+    AliasName="PARENT_CATEGORY_ID"/>
+</ViewObject>

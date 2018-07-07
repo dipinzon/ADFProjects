@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.65.37" id="pivotTableBarDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="WorldProductInventory1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="WorldProductInventory1Iterator"/>
+  </executables>
+  <bindings>
+    <pivotTable IterBinding="WorldProductInventory1Iterator" id="WorldProductInventory1"
+                xmlns="http://xmlns.oracle.com/adfm/dvt" ChangeEventPolicy="ppr">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data aggregateDuplicates="true" defaultAggregateType="SUM">
+            <item label="${adfBundle['view.ViewControllerBundle'].AMOUNT_IN_STOCK}" value="AmountInStock"/>
+            <item label="${adfBundle['view.ViewControllerBundle'].REORDER_POINT}" value="ReorderPoint"/>
+          </data>
+          <item value="WarehouseId" itemLabel="${adfBundle['view.ViewControllerBundle'].WAREHOUSE_ID}"/>
+        </columns>
+        <rows>
+          <item value="Category" itemLabel="${adfBundle['view.ViewControllerBundle'].CATEGORY}"/>
+        </rows>
+        <pages>
+          <item value="RegName" itemLabel="${adfBundle['view.ViewControllerBundle'].REGION}"/>
+          <item value="Country" itemLabel="${adfBundle['view.ViewControllerBundle'].COUNTRY}"/>
+        </pages>
+        <aggregatedItems>
+          <item aggregateLocation="AFTER" aggregateType="AVERAGE" value="Category"
+                aggregateLabel="${adfBundle['view.ViewControllerBundle'].AVERAGE}"/>
+        </aggregatedItems>
+        <drills type="INSERT"/>
+        <hierarchies>
+          <item value="Category" location="BEFORE">
+            <child value="ProdName" itemLabel="${adfBundle['view.ViewControllerBundle'].PRODUCT}"/>
+          </item>
+        </hierarchies>
+        <sorts>
+          <categorySort item="Category" direction="ASCENDING"/>
+        </sorts>
+      </pivotTableDataMap>
+    </pivotTable>
+  </bindings>
+</pageDefinition>

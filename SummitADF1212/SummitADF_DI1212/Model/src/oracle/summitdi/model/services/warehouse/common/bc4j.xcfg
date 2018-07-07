@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.summitdi.model.services.warehouse.WarehouseModule">
+      <AppModuleConfig name="WarehouseModuleLocal" jbo.project="oracle.summitdi.model.Model" ApplicationName="oracle.summitdi.model.services.warehouse.WarehouseModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="oracle.summitdi.model.services.warehouse.WarehouseModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/summit_adfDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="WarehouseModuleShared" jbo.project="oracle.summitdi.model.Model" ApplicationName="oracle.summitdi.model.services.warehouse.WarehouseModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="oracle.summitdi.model.services.warehouse.WarehouseModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/summit_adfDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

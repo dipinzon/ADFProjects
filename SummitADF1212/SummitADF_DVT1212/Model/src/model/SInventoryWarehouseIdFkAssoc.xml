@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SInventoryWarehouseIdFkAssoc"
+  Version="12.1.2.62.49"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="SWarehouse"
+    Cardinality="1"
+    Source="true"
+    Owner="model.SWarehouse">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SWarehouse"/>
+      <Attr Name="_foreignKey" Value="model.SWarehouse.SWarehouseIdPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SWarehouse.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="SInventory"
+    Cardinality="-1"
+    Owner="model.SInventory">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SInventory"/>
+      <Attr Name="_foreignKey" Value="model.SInventory.SInventoryWarehouseIdFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SInventory.WarehouseId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

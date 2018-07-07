@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductEx"
+  Version="12.1.2.66.11"
+  Extends="oracle.summit.model.extend.Product"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="S_PRODUCT"
+  AliasName="ProductEx"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <Attribute
+    Name="CategoryId"
+    Precision="7"
+    Scale="0"
+    ColumnName="CATEGORY_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_PRODUCT"/>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_PRODUCT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <validation:CompareValidationBean
+      Name="NameRule0"
+      ResId="oracle.summit.model.extended.ProductEx.Name_Rule_0"
+      OnAttribute="Name"
+      OperandType="LITERAL"
+      Inverse="true"
+      CompareType="EQUALTO"
+      CompareValue="Q"/>
+  </Attribute>
+  <Key
+    Name="SProductCategoryIdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRODUCT_CATEGORIES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="S_PRODUCT_CATEGORY_ID_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.extended.ProductEx.CategoryId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.summit.model.extended.ExtendedProjectBundle"/>
+  </ResourceBundle>
+</Entity>

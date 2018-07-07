@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SCountriesView"
+  Version="12.1.2.63.48"
+  InheritPersonalization="true"
+  SelectList="SCountries.ID, 
+       SCountries.COUNTRY, 
+       SCountries.REGION_ID, 
+       SCountries.COUNTRY_CODE"
+  FromList="S_COUNTRIES SCountries"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="SCountries"
+    Entity="model.SCountries"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SCountries"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Country"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="Country"
+    EntityUsage="SCountries"
+    AliasName="COUNTRY"/>
+  <ViewAttribute
+    Name="RegionId"
+    PrecisionRule="true"
+    EntityAttrName="RegionId"
+    EntityUsage="SCountries"
+    AliasName="REGION_ID"/>
+  <ViewAttribute
+    Name="WarehouseCount"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="INTEGER"
+    AliasName="VIEW_ATTR"
+    SQLType="INTEGER">
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[SWarehouseView.count('Id')]]></TransientExpression>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CountryCode"
+    PrecisionRule="true"
+    EntityAttrName="CountryCode"
+    EntityUsage="SCountries"
+    AliasName="COUNTRY_CODE"/>
+  <ViewLinkAccessor
+    Name="SWarehouseView"
+    ViewLink="model.CountryWarehouseViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

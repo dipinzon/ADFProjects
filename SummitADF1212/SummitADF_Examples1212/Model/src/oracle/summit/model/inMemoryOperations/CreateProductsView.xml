@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CreateProductsView"
+  Version="12.1.2.65.61"
+  InheritPersonalization="merge"
+  SelectList="Products.ID, 
+       Products.NAME"
+  FromList="S_PRODUCT Products"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="oracle.summit.base.SummitViewRowImpl"
+  ComponentClass="oracle.summit.base.SummitViewObjectImpl"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="oracle.summit.model.inMemoryOperations.CreateProductsView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="Products"
+    Entity="oracle.summit.model.inMemoryOperations.Products"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Products"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="Products"
+    AliasName="NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.summit.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

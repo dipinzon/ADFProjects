@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.19" id="schedGanttDemo2PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SalesRepViewObj1" RangeSize="-1" DataControl="AppModuleDataControl" id="SalesRepViewObj1Iterator"/>
+  </executables>
+  <bindings>
+    <gantt IterBinding="SalesRepViewObj1Iterator" id="SalesRepViewObj1" xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <ganttDataMap>
+        <nodeDefinition DefName="model.SalesRepViewObj" type="Resources">
+          <AttrNames>
+            <Item Value="Id" type="resourceId"/>
+          </AttrNames>
+          <Accessors>
+            <Item Value="SOrdView" type="tasks"/>
+          </Accessors>
+        </nodeDefinition>
+        <nodeDefinition type="Tasks" DefName="model.SOrdView">
+          <AttrNames>
+            <Item Value="Id" type="taskId"/>
+            <Item Value="DateOrdered" type="startTime"/>
+            <Item Value="DateShipped" type="endTime"/>
+          </AttrNames>
+        </nodeDefinition>
+        <nodeDefinition type="Dependents">
+          <AttrNames/>
+        </nodeDefinition>
+        <nodeDefinition type="SplitTasks">
+          <AttrNames/>
+        </nodeDefinition>
+        <nodeDefinition type="RecurringTasks">
+          <AttrNames/>
+        </nodeDefinition>
+        <nodeDefinition type="Subresources">
+          <AttrNames/>
+        </nodeDefinition>
+      </ganttDataMap>
+    </gantt>
+  </bindings>
+</pageDefinition>

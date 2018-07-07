@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.65.67" id="tMapPointDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="WorldProductInventory1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="WorldProductInventory1Iterator"/>
+    <iterator Binds="SCustomerView1" RangeSize="-1" DataControl="AppModuleDataControl" id="SCustomerView1Iterator"/>
+    <iterator Binds="SWarehouseView1" RangeSize="-1" DataControl="AppModuleDataControl" id="SWarehouseView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="WorldProductInventory1Iterator" id="WorldProductInventory1">
+      <nodeDefinition DefName="model.WorldProductInventory" Name="WorldProductInventory10">
+        <AttrNames>
+          <Item Value="Address"/>
+          <Item Value="AmountInStock"/>
+          <Item Value="Category"/>
+          <Item Value="CategoryId"/>
+          <Item Value="City"/>
+          <Item Value="Country"/>
+          <Item Value="CountryCode"/>
+          <Item Value="CountryId"/>
+          <Item Value="Id"/>
+          <Item Value="Id1"/>
+          <Item Value="Id2"/>
+          <Item Value="Id3"/>
+          <Item Value="Id4"/>
+          <Item Value="Latitude"/>
+          <Item Value="Longitude"/>
+          <Item Value="ProdName"/>
+          <Item Value="ProductId"/>
+          <Item Value="RegName"/>
+          <Item Value="RegionId"/>
+          <Item Value="ReorderPoint"/>
+          <Item Value="State"/>
+          <Item Value="WarehouseId"/>
+          <Item Value="ZipCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SCustomerView1Iterator" id="SCustomerView1">
+      <nodeDefinition DefName="model.SCustomerView" Name="SCustomerView10">
+        <AttrNames>
+          <Item Value="Address"/>
+          <Item Value="City"/>
+          <Item Value="CountryId"/>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="State"/>
+          <Item Value="ZipCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SWarehouseView1Iterator" id="SWarehouseView1">
+      <nodeDefinition DefName="model.SWarehouseView" Name="SWarehouseView10">
+        <AttrNames>
+          <Item Value="Address"/>
+          <Item Value="City"/>
+          <Item Value="CountryId"/>
+          <Item Value="Id"/>
+          <Item Value="Latitude"/>
+          <Item Value="Longitude"/>
+          <Item Value="ManagerId"/>
+          <Item Value="Phone"/>
+          <Item Value="ProductCount"/>
+          <Item Value="State"/>
+          <Item Value="ZipCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

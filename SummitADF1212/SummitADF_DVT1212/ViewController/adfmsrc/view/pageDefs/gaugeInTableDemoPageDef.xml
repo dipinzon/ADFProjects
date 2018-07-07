@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.65.21" id="gaugeInTableDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProductInventoryView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ProductInventoryView2Iterator"/>
+    <searchRegion Binds="ProductInventoryView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ProductInventoryView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ProductInventoryView2Iterator" id="ProductInventoryView2">
+      <nodeDefinition DefName="model.ProductInventoryView" Name="ProductInventoryView20">
+        <AttrNames>
+          <Item Value="Name"/>
+          <Item Value="AmountInStock"/>
+          <Item Value="MaxInStock"/>
+          <Item Value="OutOfStockExplanation"/>
+          <Item Value="ProductId"/>
+          <Item Value="ReorderPoint"/>
+          <Item Value="RestockDate"/>
+          <Item Value="WarehouseId"/>
+          <Item Value="Id"/>
+          <Item Value="ShortDesc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

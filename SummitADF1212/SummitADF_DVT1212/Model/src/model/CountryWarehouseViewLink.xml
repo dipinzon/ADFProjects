@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountryWarehouseViewLink"
+  Version="12.1.2.62.49"
+  InheritPersonalization="true">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.CountryWarehouseViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="SCountriesView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.SCountriesView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SCountriesView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SCountriesView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SWarehouseView"
+    Cardinality="-1"
+    Owner="model.SWarehouseView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SWarehouseView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SWarehouseView.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

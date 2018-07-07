@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.63.3" id="ExcelEditWarehouses"
+                Package="oracle.summitdi.view.pageDefs">
+    <executables>
+        <variableIterator id="variables">
+            <variable Name="UpdatableRowKeyVar" Type="java.lang.String" DefaultValue="${bindings.RowKey.inputValue}"
+                      IsUpdateable="0" IsQueriable="false"/>
+        </variableIterator>
+        <iterator Binds="Root.WarehouseModule.AllWarehouses" DataControl="SummitAppModuleDataControl" RangeSize="25"
+                  id="AllWarehousesIterator"/>
+    </executables>
+    <bindings>
+        <attributeValues IterBinding="AllWarehousesIterator" id="WarehouseId">
+            <AttrNames>
+                <Item Value="Id"/>
+            </AttrNames>
+        </attributeValues>
+        <list Uses="RegionIdLOV" StaticList="false" IterBinding="AllWarehousesIterator" id="RegionId"/>
+        <list Uses="CountriesLOV" StaticList="false" IterBinding="AllWarehousesIterator" id="CountryId"/>
+        <attributeValues IterBinding="AllWarehousesIterator" id="Address">
+            <AttrNames>
+                <Item Value="Address"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="AllWarehousesIterator" id="City">
+            <AttrNames>
+                <Item Value="City"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="AllWarehousesIterator" id="State">
+            <AttrNames>
+                <Item Value="State"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="AllWarehousesIterator" id="ZipCode">
+            <AttrNames>
+                <Item Value="ZipCode"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="AllWarehousesIterator" id="Phone">
+            <AttrNames>
+                <Item Value="Phone"/>
+            </AttrNames>
+        </attributeValues>
+        <list Uses="ManagersLOV" StaticList="false" IterBinding="AllWarehousesIterator" id="ManagerId"/>
+        <action IterBinding="AllWarehousesIterator" id="First"
+                InstanceName="SummitAppModuleDataControl.Root.WarehouseModule.AllWarehouses"
+                DataControl="SummitAppModuleDataControl" RequiresUpdateModel="true" Action="first"/>
+        <action IterBinding="AllWarehousesIterator" id="Previous"
+                InstanceName="SummitAppModuleDataControl.Root.WarehouseModule.AllWarehouses"
+                DataControl="SummitAppModuleDataControl" RequiresUpdateModel="true" Action="previous"/>
+        <action IterBinding="AllWarehousesIterator" id="Next"
+                InstanceName="SummitAppModuleDataControl.Root.WarehouseModule.AllWarehouses"
+                DataControl="SummitAppModuleDataControl" RequiresUpdateModel="true" Action="next"/>
+        <action IterBinding="AllWarehousesIterator" id="Last"
+                InstanceName="SummitAppModuleDataControl.Root.WarehouseModule.AllWarehouses"
+                DataControl="SummitAppModuleDataControl" RequiresUpdateModel="true" Action="last"/>
+        <action id="Commit" DataControl="SummitAppModuleDataControl" RequiresUpdateModel="true"
+                Action="commitTransaction"/>
+        <action id="Rollback" DataControl="SummitAppModuleDataControl" RequiresUpdateModel="true"
+                Action="rollbackTransaction"/>
+        <attributeValues IterBinding="AllWarehousesIterator" id="RowKey">
+            <AttrNames>
+                <Item Value="RowKey"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="variables" id="UpdatableRowKey">
+        <AttrNames>
+                <Item Value="UpdatableRowKeyVar"/>
+            </AttrNames>
+        </attributeValues>
+        <action IterBinding="AllWarehousesIterator" id="SetCurrentRowWithKey"
+                InstanceName="SummitAppModuleDataControl.Root.WarehouseModule.AllWarehouses"
+                DataControl="SummitAppModuleDataControl" RequiresUpdateModel="false" Action="setCurrentRowWithKey">
+            <NamedData NDName="rowKey" NDValue="${bindings.UpdatableRowKey.inputValue}" NDType="java.lang.String"/>
+        </action>
+    </bindings>
+</pageDefinition>

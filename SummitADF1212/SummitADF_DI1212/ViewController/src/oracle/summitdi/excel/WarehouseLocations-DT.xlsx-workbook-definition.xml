@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<workbook id="55c3c460-6b7e-4dba-b780-81be566819ce" schema-version="1" xmlns="http://xmlns.oracle.com/adf/desktopintegration/workbook">
+  <!--source-document="WarehouseLocations.xlsx" client-version="12.1.2.0.0.7583"-->
+  <resource-list>
+    <resource>
+      <alias>res</alias>
+      <class>oracle.summitdi.resources.UIResources</class>
+    </resource>
+  </resource-list>
+  <branding-list>
+    <branding>
+      <name>Application Name</name>
+      <value>#{res['summitdi.general.branding.application']}</value>
+    </branding>
+    <branding>
+      <name>Application Version</name>
+      <value>#{res['summitdi.general.branding.version']}</value>
+    </branding>
+    <branding>
+      <name>Workbook Name</name>
+      <value>#{res['excel.warehouseLocation.workbook.title']}</value>
+    </branding>
+    <branding>
+      <name>Workbook Version</name>
+      <value>#{res['summitdi.general.branding.version']}</value>
+    </branding>
+    <branding>
+      <name>Copyright</name>
+      <value>#{res['summitdi.general.branding.copyright']}</value>
+    </branding>
+  </branding-list>
+  <remote-servlet-path>/adfdiRemoteServlet</remote-servlet-path>
+  <web-app-root>http://127.0.0.1:7101/summit/</web-app-root>
+  <application-home-folder></application-home-folder>
+  <web-pages-folder></web-pages-folder>
+  <runtime-ribbon-tab>
+    <title>#{res['excel.warehouseLocation.sheet.title']}</title>
+    <command-list>
+      <command method="Login" />
+      <command method="Logout" />
+      <command method="ClearAllData" />
+      <command method="EditOptions" />
+      <command method="ViewAboutDialog" />
+    </command-list>
+  </runtime-ribbon-tab>
+  <worksheet-list>
+    <worksheet name="Sheet1">
+      <event-list>
+        <event type="Startup">
+          <action-set>
+            <action-list>
+              <worksheet-action>
+                <method>DownSync</method>
+                <annotation>Download List Data</annotation>
+              </worksheet-action>
+              <component-action>
+                <component-id>TAB1786798107</component-id>
+                <action>Download</action>
+                <annotation>Download table data</annotation>
+              </component-action>
+            </action-list>
+          </action-set>
+        </event>
+      </event-list>
+      <ribbon-command-list>
+        <ribbon-command id="MEN2039592694">
+          <select-action-set>
+            <action-list>
+              <server-action>
+                <action-id>Commit</action-id>
+              </server-action>
+            </action-list>
+          </select-action-set>
+          <label>#{res['excel.warehouseLocation.ribbon.commit']}</label>
+        </ribbon-command>
+      </ribbon-command-list>
+      <title>#{res['excel.search.title']}</title>
+      <pagedef-usage-id>ExcelWarehouseLocations</pagedef-usage-id>
+      <component-list>
+        <label-component id="LBL956428330" origin="F7">
+          <label>#{bindings.RegionList.label}</label>
+          <style>_ADFDI_LabelStyle</style>
+        </label-component>
+        <list-of-values-component id="LST309304184" origin="G7">
+          <list-of-values>
+            <list-id>RegionList</list-id>
+            <read-only>False</read-only>
+          </list-of-values>
+          <style>_ADFDI_InputTextStyle</style>
+        </list-of-values-component>
+        <table-component id="TAB1786798107" origin="D10">
+          <tree-id>Warehouses</tree-id>
+          <column-list>
+            <column id="_ADF_ChangedColumn">
+              <update-component>
+                <output-text />
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_TriangleHeaderStyle</header-style>
+              <header-label>#{_ADFDIres['COMPONENTS_TABLE_CHANGED_COL_LABEL']}</header-label>
+              <cell-style>_ADFDI_TableChangedColumnStyle</cell-style>
+            </column>
+            <column id="_ADF_FlagColumn">
+              <update-component>
+                <output-text />
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_TriangleHeaderStyle</header-style>
+              <header-label>#{_ADFDIres['COMPONENTS_TABLE_FLAGGED_COL_LABEL']}</header-label>
+              <cell-style>_ADFDI_TableFlagColumnStyle</cell-style>
+            </column>
+            <column id="_ADF_StatusColumn">
+              <update-component>
+                <output-text>
+                  <double-click-action-set>
+                    <status enabled="false" />
+                    <action-list>
+                      <component-action>
+                        <component-id>TAB1786798107</component-id>
+                        <action>DisplayRowErrors</action>
+                      </component-action>
+                    </action-list>
+                  </double-click-action-set>
+                </output-text>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{_ADFDIres['COMPONENTS_TABLE_STATUS_COL_LABEL']}</header-label>
+              <cell-style>_ADFDI_TableDoubleClickCellStyle</cell-style>
+            </column>
+            <column id="Id">
+              <update-component>
+                <input-text>
+                  <value>#{row.bindings.Id.inputValue}</value>
+                  <read-only>False</read-only>
+                </input-text>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{bindings.Warehouses.hints.Id.label}</header-label>
+              <cell-style>_ADFDI_TableCellStyle</cell-style>
+            </column>
+            <column id="ManagerId">
+              <update-component>
+                <tree-node-list>
+                  <list>#{row.bindings.ManagerId.inputValue}</list>
+                  <read-only>False</read-only>
+                </tree-node-list>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{bindings.Warehouses.hints.ManagerId.label}</header-label>
+              <cell-style>_ADFDI_TableCellStyle</cell-style>
+            </column>
+            <column id="CountryId">
+              <update-component>
+                <tree-node-list>
+                  <list>#{row.bindings.CountryId.inputValue}</list>
+                  <depends-on-list>#{bindings.RegionList}</depends-on-list>
+                  <read-only>False</read-only>
+                </tree-node-list>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{bindings.Warehouses.hints.CountryId.label}</header-label>
+              <cell-style>_ADFDI_TableCellStyle</cell-style>
+            </column>
+            <column id="Phone">
+              <update-component>
+                <input-text>
+                  <value>#{row.bindings.Phone.inputValue}</value>
+                  <read-only>False</read-only>
+                </input-text>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{bindings.Warehouses.hints.Phone.label}</header-label>
+              <cell-style>_ADFDI_TableCellStyle</cell-style>
+            </column>
+            <column id="Address">
+              <update-component>
+                <input-text>
+                  <value>#{row.bindings.Address.inputValue}</value>
+                  <read-only>False</read-only>
+                </input-text>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{bindings.Warehouses.hints.Address.label}</header-label>
+              <cell-style>_ADFDI_TableCellStyle</cell-style>
+            </column>
+            <column id="City">
+              <update-component>
+                <input-text>
+                  <value>#{row.bindings.City.inputValue}</value>
+                  <read-only>False</read-only>
+                </input-text>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{bindings.Warehouses.hints.City.label}</header-label>
+              <cell-style>_ADFDI_TableCellStyle</cell-style>
+            </column>
+            <column id="State">
+              <update-component>
+                <input-text>
+                  <value>#{row.bindings.State.inputValue}</value>
+                  <read-only>False</read-only>
+                </input-text>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{bindings.Warehouses.hints.State.label}</header-label>
+              <cell-style>_ADFDI_TableCellStyle</cell-style>
+            </column>
+            <column id="ZipCode">
+              <update-component>
+                <input-text>
+                  <value>#{row.bindings.ZipCode.inputValue}</value>
+                  <read-only>False</read-only>
+                </input-text>
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{bindings.Warehouses.hints.ZipCode.label}</header-label>
+              <cell-style>_ADFDI_TableCellStyle</cell-style>
+            </column>
+            <column id="_ADF_RowKeyColumn">
+              <update-component>
+                <output-text />
+              </update-component>
+              <visible>True</visible>
+              <header-style>_ADFDI_HeaderStyle</header-style>
+              <header-label>#{_ADFDIres['COMPONENTS_TABLE_ROWKEY_COL_LABEL']}</header-label>
+              <cell-style>_ADFDI_TableKeyCellStyle</cell-style>
+            </column>
+          </column-list>
+          <row-limit>
+            <max-rows>500</max-rows>
+          </row-limit>
+        </table-component>
+        <label-component id="LBL1191413738" origin="D5">
+          <label>#{res['excel.warehouseLocation.title']}</label>
+          <style>Summit_Title</style>
+        </label-component>
+      </component-list>
+    </worksheet>
+  </worksheet-list>
+</workbook>

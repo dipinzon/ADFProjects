@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.63.37" id="timelineDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SEmpView1" RangeSize="-1" DataControl="AppModuleDataControl" id="SEmpView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SEmpView1Iterator" id="SEmpView1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.SEmpView" Name="SEmpView1">
+        <AttrNames>
+          <Item Value="DeptId"/>
+          <Item Value="FirstName"/>
+          <Item Value="Id"/>
+          <Item Value="LastName"/>
+          <Item Value="StartDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

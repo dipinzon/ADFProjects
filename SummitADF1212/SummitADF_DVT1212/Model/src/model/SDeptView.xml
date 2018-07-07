@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SDeptView"
+  Version="12.1.2.63.37"
+  InheritPersonalization="true"
+  SelectList="SDept.ID, 
+       SDept.NAME, 
+       SDept.REGION_ID"
+  FromList="S_DEPT SDept"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="SDept"
+    Entity="model.SDept"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SDept"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="SDept"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="RegionId"
+    IsUnique="true"
+    PrecisionRule="true"
+    EntityAttrName="RegionId"
+    EntityUsage="SDept"
+    AliasName="REGION_ID"/>
+  <ViewLinkAccessor
+    Name="SEmpView"
+    ViewLink="model.SEmpDeptIdFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

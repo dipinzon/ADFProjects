@@ -1,0 +1,28 @@
+<xsd:schema xmlns:sdoJava="commonj.sdo/java" xmlns:ns0="http://xmlns.oracle.com/adf/svc/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:sdoXML="commonj.sdo/xml" targetNamespace="/oracle/summit/model/amservice/common/"
+     xmlns="/oracle/summit/model/amservice/common/" elementFormDefault="qualified" sdoJava:package="oracle.summit.model.amservice.common">
+    <xsd:import schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd" namespace="http://xmlns.oracle.com/adf/svc/types/"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoXML.xsd" namespace="commonj.sdo/xml"/>
+    <xsd:complexType name="OrdersViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Id</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Id" type="xsd:int" minOccurs="0" sdoXML:dataType="sdoJava:IntObject"/>
+            <xsd:element name="CustomerId" type="xsd:int" minOccurs="0" sdoXML:dataType="sdoJava:IntObject"/>
+            <xsd:element name="DateOrdered" type="ns0:date-Date" minOccurs="0" nillable="true"/>
+            <xsd:element name="DateShipped" type="ns0:date-Date" minOccurs="0" nillable="true"/>
+            <xsd:element name="SalesRepId" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="Total" type="xsd:decimal" minOccurs="0" nillable="true"/>
+            <xsd:element name="PaymentTypeId" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="PaymentOptionId" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="OrderFilled" type="xsd:string" minOccurs="0" nillable="true"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="ordersViewSDO" type="OrdersViewSDO"/>
+</xsd:schema>

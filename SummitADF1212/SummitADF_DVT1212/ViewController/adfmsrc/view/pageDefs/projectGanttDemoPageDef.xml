@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.66.38" id="projectGanttDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="OrderEmployee1" RangeSize="-1" DataControl="AppModuleDataControl" id="OrderEmployee1Iterator"/>
+  </executables>
+  <bindings>
+    <gantt IterBinding="OrderEmployee1Iterator" id="OrderEmployee1" xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <ganttDataMap>
+        <nodeDefinition DefName="model.OrderEmployee" type="Tasks">
+          <AttrNames>
+            <Item Value="Id" type="taskId"/>
+            <Item Value="DateOrdered" type="startTime"/>
+            <Item Value="DateShipped" type="endTime"/>
+          </AttrNames>
+        </nodeDefinition>
+        <nodeDefinition type="SubTasks">
+          <AttrNames/>
+        </nodeDefinition>
+        <nodeDefinition type="Dependents">
+          <AttrNames/>
+        </nodeDefinition>
+        <nodeDefinition type="SplitTasks">
+          <AttrNames/>
+        </nodeDefinition>
+        <nodeDefinition type="RecurringTasks">
+          <AttrNames/>
+        </nodeDefinition>
+      </ganttDataMap>
+    </gantt>
+  </bindings>
+</pageDefinition>

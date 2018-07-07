@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.62.49" id="treemapDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SRegionView1" RangeSize="-1" DataControl="AppModuleDataControl" id="SRegionView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SRegionView1Iterator" id="SRegionView1">
+      <nodeDefinition DefName="model.SRegionView" Name="SRegionView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="CountryCount"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SCountriesView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.SCountriesView" Name="SRegionView11">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Country"/>
+          <Item Value="RegionId"/>
+          <Item Value="WarehouseCount"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SWarehouseView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.SWarehouseView" Name="SRegionView12">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Address"/>
+          <Item Value="City"/>
+          <Item Value="State"/>
+          <Item Value="CountryId"/>
+          <Item Value="ZipCode"/>
+          <Item Value="Phone"/>
+          <Item Value="ManagerId"/>
+          <Item Value="ProductCount"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="ProductInventoryView"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.ProductInventoryView" Name="SRegionView13">
+        <AttrNames>
+          <Item Value="ProductId"/>
+          <Item Value="WarehouseId"/>
+          <Item Value="AmountInStock"/>
+          <Item Value="ReorderPoint"/>
+          <Item Value="MaxInStock"/>
+          <Item Value="OutOfStockExplanation"/>
+          <Item Value="RestockDate"/>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="ShortDesc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.63.3" id="ExcelCustomersSearch"
+                Package="oracle.summitdi.view.pageDefs">
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator id="CustomersIterator" Binds="Root.CustomersModule.Customers" DataControl="SummitAppModuleDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomersIterator" id="Customers">
+      <nodeDefinition DefName="oracle.summitdi.model.queries.CustomersView"
+                      Name="Customers0">
+        <AttrNames>
+          <Item Value="Address"/>
+          <Item Value="City"/>
+          <Item Value="Comments"/>
+          <Item Value="RegionId"/>
+          <Item Value="CountryId"/>
+          <Item Value="CreditRatingId"/>
+          <Item Value="Name"/>
+          <Item Value="Phone"/>
+          <Item Value="SalesRepId"/>
+          <Item Value="State"/>
+          <Item Value="ZipCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="CustomersIterator" id="CreateInsert" InstanceName="InventoriesAppModuleDataControl.Customers"
+            DataControl="InventoriesAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CustomersIterator" id="Delete" InstanceName="InventoriesAppModuleDataControl.Customers"
+            DataControl="InventoriesAppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="InventoriesAppModuleDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <methodAction IterBinding="CustomersIterator" id="resetQueryValues"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="resetQueryValues" IsViewObjectMethod="true"
+                  DataControl="SummitAppModuleDataControl"
+                  InstanceName="SummitAppModuleDataControl.dataProvider.Root.CustomersModule.Customers"/>
+  </bindings>
+</pageDefinition>

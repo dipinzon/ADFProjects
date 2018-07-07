@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.summit.model.polymorphic.service.PolymorphicAppModule">
+      <AppModuleConfig name="PolymorphicAppModuleLocal" DeployPlatform="LOCAL" ApplicationName="oracle.summit.model.polymorphic.service.PolymorphicAppModule" jbo.project="oracle.summit.model.Model">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="Java"/>
+         <Security AppModuleJndiName="oracle.summit.model.polymorphic.service.PolymorphicAppModule"/>
+         <Custom ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/summit_adfDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="PolymorphicAppModuleShared" DeployPlatform="LOCAL" ApplicationName="oracle.summit.model.polymorphic.service.PolymorphicAppModule" jbo.project="oracle.summit.model.Model">
+         <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.resetnontransactionalstate="false" jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.maxpoolsize="1"/>
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="Java"/>
+         <Security AppModuleJndiName="oracle.summit.model.polymorphic.service.PolymorphicAppModule"/>
+         <Custom ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/summit_adfDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

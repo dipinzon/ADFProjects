@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomersAppModule"
+  Version="12.1.2.62.0"
+  InheritPersonalization="true"
+  ComponentClass="oracle.summitdi.base.SummitApplicationModuleImpl"
+  ClearCacheOnRollback="true">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="oracle.summitdi.model.services.customers.CustomersAppModule_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="Customers"
+    ViewObjectName="oracle.summitdi.model.queries.CustomersView"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="oracle.summitdi.model.resources.ModelBundle"/>
+  </ResourceBundle>
+</AppModule>

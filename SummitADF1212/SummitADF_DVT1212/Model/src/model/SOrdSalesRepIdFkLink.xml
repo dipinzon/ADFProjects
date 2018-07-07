@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SOrdSalesRepIdFkLink"
+  Version="12.1.2.65.67"
+  InheritPersonalization="merge"
+  EntityAssociation="model.SOrdSalesRepIdFkAssoc">
+  <ViewLinkDefEnd
+    Name="EmployeeSearchResults"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EmployeeSearchResults">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EmployeeSearchResults"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EmployeeSearchResults.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SOrdView"
+    Cardinality="-1"
+    Owner="model.SOrdView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SOrdView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SOrdView.SalesRepId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

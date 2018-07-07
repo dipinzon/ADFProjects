@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SOrdCustomerIdFkLink"
+  Version="12.1.2.65.79"
+  InheritPersonalization="merge"
+  EntityAssociation="oracle.summit.model.readandwritexml.entities.SOrdCustomerIdFkAssoc">
+  <ViewLinkDefEnd
+    Name="CustomersView"
+    Cardinality="1"
+    Source="true"
+    Owner="oracle.summit.model.readandwritexml.queries.CustomersView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CustomersView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.readandwritexml.queries.CustomersView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="OrdersView"
+    Cardinality="-1"
+    Owner="oracle.summit.model.readandwritexml.queries.OrdersView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="OrdersView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.readandwritexml.queries.OrdersView.CustomerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

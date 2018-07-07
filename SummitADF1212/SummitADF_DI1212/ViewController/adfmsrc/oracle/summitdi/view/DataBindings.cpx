@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.1.63.3" id="DataBindings"
+             SeparateXMLFiles="false" Package="oracle.summitdi.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/external/searchForm.jspx"
+          usageId="oracle_summitdi_view_searchFormPageDef"/>
+    <page path="/MainPage.jsf" usageId="oracle_summitdi_view_MainPagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="ExcelEditCustomers" path="oracle.summitdi.view.pageDefs.ExcelCustomers"/>
+    <page id="ExcelEditWarehouses" path="oracle.summitdi.view.pageDefs.ExcelWarehouses"/>
+    <page id="ExcelSearchCustomers" path="oracle.summitdi.view.pageDefs.ExcelCustomersSearch"/>
+    <page id="ExcelWarehouseLocations" path="oracle.summitdi.view.pageDefs.ExcelWarehouseLocations"/>
+    <page id="oracle_summitdi_view_searchFormPageDef"
+          path="external.searchFormPageDef"/>
+    <page id="oracle_summitdi_view_MainPagePageDef" path="oracle.summitdi.view.pageDefs.MainPagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="SamplesList" path="oracle.summit.SamplesList"/>
+    <BC4JDataControl id="SummitAppModuleDataControl" Package="oracle.summitdi.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="SummitAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="WarehouseModuleDataControl"
+                     Package="oracle.summitdi.model.services.warehouse"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="WarehouseModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

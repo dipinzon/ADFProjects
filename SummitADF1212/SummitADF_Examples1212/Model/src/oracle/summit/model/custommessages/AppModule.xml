@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.1.2.62.39"
+  InheritPersonalization="true"
+  ComponentClass="oracle.summit.base.SummitApplicationModuleImpl"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="SOrdView1"
+    ViewObjectName="oracle.summit.model.custommessages.SOrdView"/>
+</AppModule>

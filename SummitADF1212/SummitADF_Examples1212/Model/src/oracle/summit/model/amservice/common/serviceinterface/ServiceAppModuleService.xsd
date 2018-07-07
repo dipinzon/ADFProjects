@@ -1,0 +1,146 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/oracle/summit/model/amservice/common/types/"
+     xmlns:tns="/oracle/summit/model/amservice/common/types/" xmlns:ns0="/oracle/summit/model/amservice/common/"
+     xmlns:ns1="http://xmlns.oracle.com/adf/svc/types/">
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd"/>
+    <import namespace="/oracle/summit/model/amservice/common/" schemaLocation="../OrdersViewSDO.xsd"/>
+    <import namespace="/oracle/summit/model/amservice/common/" schemaLocation="../CustomersViewSDO.xsd"/>
+    <element name="createCustomersView">
+        <complexType>
+            <sequence>
+                <element name="customersView" type="ns0:CustomersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createCustomersViewResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CustomersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateCustomersView">
+        <complexType>
+            <sequence>
+                <element name="customersView" type="ns0:CustomersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateCustomersViewResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CustomersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteCustomersView">
+        <complexType>
+            <sequence>
+                <element name="customersView" type="ns0:CustomersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteCustomersViewResponse">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="mergeCustomersView">
+        <complexType>
+            <sequence>
+                <element name="customersView" type="ns0:CustomersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeCustomersViewResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:CustomersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createOrdersView">
+        <complexType>
+            <sequence>
+                <element name="ordersView" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createOrdersViewResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrdersView">
+        <complexType>
+            <sequence>
+                <element name="ordersView" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateOrdersViewResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteOrdersView">
+        <complexType>
+            <sequence>
+                <element name="ordersView" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteOrdersViewResponse">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="mergeOrdersView">
+        <complexType>
+            <sequence>
+                <element name="ordersView" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeOrdersViewResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OrdersViewSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltCtrlHints">
+        <complexType>
+            <sequence>
+                <element name="viewName" type="string"/>
+                <element name="localeName" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDfltCtrlHintsResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns1:AttrCtrlHints" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrdersViewOrdersViewCriteria">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns1:FindCriteria"/>
+                <element name="OrdId" type="string"/>
+                <element name="findControl" type="ns1:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findOrdersViewOrdersViewCriteriaResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:OrdersViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

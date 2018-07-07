@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.summit.model.multinamedviewcriteria.AppModule">
+      <AppModuleConfig name="AppModuleLocal" jbo.project="oracle.summit.model.Model" ApplicationName="oracle.summit.model.multinamedviewcriteria.AppModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="Java"/>
+         <Security AppModuleJndiName="oracle.summit.model.multinamedviewcriteria.AppModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/summit_adfDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleShared" jbo.project="oracle.summit.model.Model" ApplicationName="oracle.summit.model.multinamedviewcriteria.AppModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="Java"/>
+         <Security AppModuleJndiName="oracle.summit.model.multinamedviewcriteria.AppModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/summit_adfDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

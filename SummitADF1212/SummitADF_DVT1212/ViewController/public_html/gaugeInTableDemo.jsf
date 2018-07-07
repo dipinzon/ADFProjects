@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:document title="gaugeInTableDemo.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:table value="#{bindings.ProductInventoryView2.collectionModel}" var="row"
+                rows="#{bindings.ProductInventoryView2.rangeSize}"
+                emptyText="#{bindings.ProductInventoryView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                fetchSize="#{bindings.ProductInventoryView2.rangeSize}" rowBandingInterval="0"
+                filterModel="#{bindings.ProductInventoryView2Query.queryDescriptor}"
+                queryListener="#{bindings.ProductInventoryView2Query.processQuery}" filterVisible="true" varStatus="vs"
+                selectionListener="#{bindings.ProductInventoryView2.collectionModel.makeCurrent}"
+                rowSelection="multiple" id="t1">
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.ProductId.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ProductInventoryView2.hints.ProductId.label}" id="c5"
+                   width="57">
+          <af:outputText value="#{row.ProductId}" shortDesc="#{bindings.ProductInventoryView2.hints.ProductId.tooltip}"
+                         id="ot4">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.ProductInventoryView2.hints.ProductId.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.Name.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ProductInventoryView2.hints.Name.label}" id="c1" width="143">
+          <af:outputText value="#{row.Name}" shortDesc="#{bindings.ProductInventoryView2.hints.Name.tooltip}" id="ot1"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.ShortDesc.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ProductInventoryView2.hints.ShortDesc.label}" id="c10"
+                   width="100">
+          <af:outputText value="#{row.ShortDesc}" shortDesc="#{bindings.ProductInventoryView2.hints.ShortDesc.tooltip}"
+                         id="ot9"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.AmountInStock.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ProductInventoryView2.hints.AmountInStock.label}" id="c2"
+                   width="138">
+          <dvt:gauge value="#{row.bindings.AmountInStock.inputValue}" gaugeType="STATUSMETER"
+                     inlineStyle="height:22px;width:130px"
+                     shortDesc="#{bindings.ProductInventoryView2.hints.AmountInStock.tooltip}" id="g1"
+                     ledStyle="LS_RECTANGLE">
+            <dvt:topLabel position="LP_NONE"/>
+            <dvt:metricLabel position="LP_INSIDE_GAUGE" scaling="none">
+              <af:convertNumber pattern="#{row.bindings.AmountInStock.format}"/>
+            </dvt:metricLabel>
+            <dvt:bottomLabel position="LP_NONE"/>
+          </dvt:gauge>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.ReorderPoint.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ProductInventoryView2.hints.ReorderPoint.label}" id="c6"
+                   width="63">
+          <af:outputText value="#{row.ReorderPoint}"
+                         shortDesc="#{bindings.ProductInventoryView2.hints.ReorderPoint.tooltip}" id="ot5">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.ProductInventoryView2.hints.ReorderPoint.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.MaxInStock.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ProductInventoryView2.hints.MaxInStock.label}" id="c3"
+                   width="64">
+          <af:outputText value="#{row.MaxInStock}"
+                         shortDesc="#{bindings.ProductInventoryView2.hints.MaxInStock.tooltip}" id="ot2">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.ProductInventoryView2.hints.MaxInStock.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.OutOfStockExplanation.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ProductInventoryView2.hints.OutOfStockExplanation.label}"
+                   id="c4" width="135">
+          <af:outputText value="#{row.OutOfStockExplanation}"
+                         shortDesc="#{bindings.ProductInventoryView2.hints.OutOfStockExplanation.tooltip}" id="ot3"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.RestockDate.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ProductInventoryView2.hints.RestockDate.label}" id="c7"
+                   width="66">
+          <f:facet name="filter">
+            <af:inputDate value="#{vs.filterCriteria.RestockDate}" id="id1">
+              <af:convertDateTime pattern="#{bindings.ProductInventoryView2.hints.RestockDate.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:outputText value="#{row.RestockDate}"
+                         shortDesc="#{bindings.ProductInventoryView2.hints.RestockDate.tooltip}" id="ot6">
+            <af:convertDateTime pattern="#{bindings.ProductInventoryView2.hints.RestockDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ProductInventoryView2.hints.WarehouseId.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ProductInventoryView2.hints.WarehouseId.label}" id="c8"
+                   width="101">
+          <af:outputText value="#{row.WarehouseId}"
+                         shortDesc="#{bindings.ProductInventoryView2.hints.WarehouseId.tooltip}" id="ot7">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.ProductInventoryView2.hints.WarehouseId.format}"/>
+          </af:outputText>
+        </af:column>
+      </af:table>
+    </af:form>
+  </af:document>
+</f:view>

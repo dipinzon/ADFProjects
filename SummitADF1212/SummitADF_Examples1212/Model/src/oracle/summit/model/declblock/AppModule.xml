@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.1.2.64.42"
+  InheritPersonalization="merge"
+  ComponentClass="oracle.summit.base.SummitApplicationModuleImpl"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="Products"
+    ViewObjectName="oracle.summit.model.declblock.Products"/>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="ProductsNoDelete"
+        Value="Insert,Update"/>
+      <Property
+        Name="ProductsInsertOnly"
+        Value="Insert"/>
+      <Property
+        Name="ProductsUpdateOnly"
+        Value="Update"/>
+    </CustomProperties>
+  </Properties>
+  <ViewUsage
+    Name="ProductsInsertOnly"
+    ViewObjectName="oracle.summit.model.declblock.Products"/>
+  <ViewUsage
+    Name="ProductsNoDelete"
+    ViewObjectName="oracle.summit.model.declblock.Products"/>
+  <ViewUsage
+    Name="ProductsUpdateOnly"
+    ViewObjectName="oracle.summit.model.declblock.Products"/>
+</AppModule>

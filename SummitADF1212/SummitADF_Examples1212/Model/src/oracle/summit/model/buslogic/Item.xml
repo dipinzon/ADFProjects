@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Item"
+  Version="12.1.2.66.11"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="S_ITEM"
+  AliasName="Item"
+  BindingStyle="OracleName"
+  RowClass="oracle.summit.base.SummitEntityImpl">
+  <Attribute
+    Name="OrdId"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="ORD_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_ITEM"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ItemId"
+    IsNotNull="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="ITEM_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_ITEM"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ProductId"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="PRODUCT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_ITEM"/>
+  <Attribute
+    Name="Price"
+    Precision="11"
+    Scale="2"
+    ColumnName="PRICE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="S_ITEM"/>
+  <Attribute
+    Name="Quantity"
+    Precision="9"
+    Scale="0"
+    ColumnName="QUANTITY"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_ITEM"/>
+  <Attribute
+    Name="QuantityShipped"
+    Precision="9"
+    Scale="0"
+    ColumnName="QUANTITY_SHIPPED"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_ITEM"/>
+  <AccessorAttribute
+    Name="Orders"
+    Association="oracle.summit.model.buslogic.SItemOrdIdFkAssoc"
+    AssociationEnd="oracle.summit.model.buslogic.SItemOrdIdFkAssoc.Orders"
+    AssociationOtherEnd="oracle.summit.model.buslogic.SItemOrdIdFkAssoc.Item"
+    Type="oracle.summit.base.SummitEntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SItemItemIdNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="S_ITEM_ITEM_ID_NN"/>
+      <Attr Name="_checkCondition" Value="ITEM_ID IS NOT NULL"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SItemOrdIdNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="S_ITEM_ORD_ID_NN"/>
+      <Attr Name="_checkCondition" Value="ORD_ID IS NOT NULL"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SItemOrdidItemidPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="S_ITEM_ORDID_ITEMID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.buslogic.Item.OrdId"/>
+      <Item Value="oracle.summit.model.buslogic.Item.ItemId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SItemOrdidProdidUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="S_ITEM_ORDID_PRODID_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.buslogic.Item.OrdId"/>
+      <Item Value="oracle.summit.model.buslogic.Item.ProductId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SItemProductIdNn">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="S_ITEM_PRODUCT_ID_NN"/>
+      <Attr Name="_checkCondition" Value="PRODUCT_ID IS NOT NULL"/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SItemOrdIdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="S_ORD_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="S_ITEM_ORD_ID_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.buslogic.Item.OrdId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SItemProductIdFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="S_PRODUCT_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="S_ITEM_PRODUCT_ID_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.buslogic.Item.ProductId"/>
+    </AttrArray>
+  </Key>
+</Entity>

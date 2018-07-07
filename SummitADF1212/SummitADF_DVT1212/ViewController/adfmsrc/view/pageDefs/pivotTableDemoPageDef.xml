@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.65.37" id="pivotTableDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SInventoryView1" RangeSize="-1" DataControl="AppModuleDataControl" id="SInventoryView1Iterator"/>
+  </executables>
+  <bindings>
+    <pivotTable IterBinding="SInventoryView1Iterator" id="SInventoryView1" xmlns="http://xmlns.oracle.com/adfm/dvt"
+                ChangeEventPolicy="ppr">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data aggregateDuplicates="true" defaultAggregateType="SUM">
+            <item label="${adfBundle['view.ViewControllerBundle'].AMOUNT_IN_STOCK}" value="AmountInStock"/>
+            <item label="${adfBundle['view.ViewControllerBundle'].REORDER_POINT}" value="ReorderPoint"/>
+          </data>
+        </columns>
+        <rows>
+          <item value="Name" itemLabel="${adfBundle['view.ViewControllerBundle'].PRODUCT}" label="Name"/>
+        </rows>
+        <aggregatedItems>
+          <item aggregateLocation="BEFORE" aggregateType="SUM" value="Name"/>
+        </aggregatedItems>
+        <pages>
+          <item value="WarehouseId" itemLabel="${adfBundle['view.ViewControllerBundle'].WHAREHOUSE_ID}"
+                label="WarehouseId"/>
+        </pages>
+      </pivotTableDataMap>
+    </pivotTable>
+  </bindings>
+</pageDefinition>

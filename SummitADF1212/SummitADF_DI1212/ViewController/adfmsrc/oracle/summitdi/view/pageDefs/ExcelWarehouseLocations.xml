@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.63.3" id="ExcelWarehouseLocations"
+                Package="oracle.summitdi.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="Root.WarehouseModule.AllWarehouses"
+              DataControl="SummitAppModuleDataControl" RangeSize="10"
+              id="WarehousesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="WarehousesIterator" id="Warehouses">
+      <nodeDefinition DefName="oracle.summitdi.model.queries.WarehouseView"
+                      Name="AllWarehouses0">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ManagerId"/>
+          <Item Value="CountryId"/>
+          <Item Value="Phone"/>
+          <Item Value="Address"/>
+          <Item Value="City"/>
+          <Item Value="State"/>
+          <Item Value="ZipCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list Uses="RegionIdLOV" StaticList="false" IterBinding="WarehousesIterator"
+          id="RegionList"/>
+    <action id="Commit" DataControl="SummitAppModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

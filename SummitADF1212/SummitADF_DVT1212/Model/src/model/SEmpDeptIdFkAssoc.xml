@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SEmpDeptIdFkAssoc"
+  Version="12.1.2.63.37"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="SDept"
+    Cardinality="1"
+    Source="true"
+    Owner="model.SDept">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SDept"/>
+      <Attr Name="_foreignKey" Value="model.SDept.SDeptIdPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SDept.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="SEmp"
+    Cardinality="-1"
+    Owner="model.SEmp">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SEmp"/>
+      <Attr Name="_foreignKey" Value="model.SEmp.SEmpDeptIdFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SEmp.DeptId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

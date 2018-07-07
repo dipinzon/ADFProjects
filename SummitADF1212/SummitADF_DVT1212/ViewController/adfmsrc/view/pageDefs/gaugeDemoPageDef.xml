@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.65.21" id="gaugeDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProductInventoryView1" RangeSize="1" DataControl="AppModuleDataControl"
+              id="ProductInventoryView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProductInventoryView1Iterator" id="AmountInStock">
+      <AttrNames>
+        <Item Value="AmountInStock"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="ReorderPoint" IterBinding="ProductInventoryView1Iterator">
+      <AttrNames>
+        <Item Value="ReorderPoint"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="MaxInStock" IterBinding="ProductInventoryView1Iterator">
+      <AttrNames>
+        <Item Value="MaxInStock"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="Name" IterBinding="ProductInventoryView1Iterator">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

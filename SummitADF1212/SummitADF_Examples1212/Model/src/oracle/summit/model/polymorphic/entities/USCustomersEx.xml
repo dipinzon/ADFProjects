@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="USCustomersEx"
+  Version="12.1.2.66.11"
+  Extends="oracle.summit.model.polymorphic.entities.Customers"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="S_CUSTOMER"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="CountryId"
+    DiscrColumn="true"
+    DefaultValue="4"
+    Precision="7"
+    Scale="0"
+    ColumnName="COUNTRY_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_OverrideAttr" Value="true"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="State"
+    Precision="20"
+    ColumnName="STATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="S_CUSTOMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+</Entity>

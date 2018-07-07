@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+    <message-bundle>oracle.summitdi.resources.UIResources</message-bundle>
+    <resource-bundle>
+      <base-name>oracle.summitdi.resources.UIResources</base-name>
+      <var>res</var>
+    </resource-bundle>
+    <locale-config>
+      <default-locale>en</default-locale>
+    </locale-config>
+  </application>
+</faces-config>

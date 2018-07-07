@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OrderEmployee"
+  Version="12.1.2.66.38"
+  InheritPersonalization="merge"
+  SelectList="SOrd.DATE_ORDERED, 
+       SOrd.ID, 
+       SOrd.DATE_SHIPPED, 
+       SEmp.LAST_NAME, 
+       SEmp.ID AS ID1, 
+       SEmp.FIRST_NAME, 
+       SEmp.TITLE_ID"
+  FromList="S_ORD SOrd, S_EMP SEmp"
+  Where="SOrd.SALES_REP_ID = SEmp.ID AND SEmp.TITLE_ID=2"
+  OrderBy="SOrd.DATE_ORDERED"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.OrderEmployee_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="SOrd"
+    Entity="model.SOrd"/>
+  <EntityUsage
+    Name="SEmp"
+    Entity="model.SEmp"
+    Association="model.SOrdSalesRepIdFkAssoc"
+    AssociationEnd="model.SOrdSalesRepIdFkAssoc.SEmp"
+    SourceUsage="model.OrderEmployee.SOrd"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.SOrd.SalesRepId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.SEmp.Id"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="DateOrdered"
+    PrecisionRule="true"
+    EntityAttrName="DateOrdered"
+    EntityUsage="SOrd"
+    AliasName="DATE_ORDERED"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SOrd"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="DateShipped"
+    PrecisionRule="true"
+    EntityAttrName="DateShipped"
+    EntityUsage="SOrd"
+    AliasName="DATE_SHIPPED"/>
+  <ViewAttribute
+    Name="LastName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="SEmp"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Id1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SEmp"
+    AliasName="ID1"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="SEmp"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="TitleId"
+    PrecisionRule="true"
+    EntityAttrName="TitleId"
+    EntityUsage="SEmp"
+    AliasName="TITLE_ID"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Id"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

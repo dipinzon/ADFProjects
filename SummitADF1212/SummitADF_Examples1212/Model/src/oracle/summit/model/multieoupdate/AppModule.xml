@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.1.2.66.18"
+  InheritPersonalization="merge"
+  ComponentClass="oracle.summit.base.SummitApplicationModuleImpl"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="ProductInventoryVO1"
+    ViewObjectName="oracle.summit.model.multieoupdate.ProductInventoryVO"/>
+</AppModule>

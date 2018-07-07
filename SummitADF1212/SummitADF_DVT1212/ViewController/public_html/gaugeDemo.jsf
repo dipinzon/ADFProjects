@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:document title="gaugeDemo.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <dvt:gauge id="gauge1" value="#{bindings.AmountInStock.inputValue}" gaugeType="DIAL" maxValue="1500"
+                 shortDesc="Sample Dial Gauge" inlineStyle="width:300px; height:300px">
+        <dvt:gaugeBackground>
+          <dvt:specialEffects/>
+        </dvt:gaugeBackground>
+        <dvt:thresholdSet>
+          <dvt:threshold fillColor="#d62800" text="Reorder Time"
+                         thresholdMaxValue="#{bindings.ReorderPoint.inputValue}"/>
+          <dvt:threshold fillColor="#63a500" text="Levels OK" thresholdMaxValue="#{bindings.MaxInStock.inputValue}"/>
+          <dvt:threshold fillColor="#e7e700" text="Over Stock"/>
+        </dvt:thresholdSet>
+        <dvt:gaugeFrame/>
+        <dvt:indicator/>
+        <dvt:indicatorBase/>
+        <dvt:gaugePlotArea/>
+        <dvt:tickLabel scaling="none"/>
+        <dvt:tickMark/>
+        <dvt:topLabel position="LP_ABOVE_GAUGE" text="#{bindings.Name.inputValue}"/>
+        <dvt:bottomLabel position="LP_BELOW_GAUGE" text="#{bindings.AmountInStock.hints.label}"/>
+        <dvt:gaugeLegendTitle text="Legend"/>
+        <dvt:gaugeLegendArea position="LAP_RIGHT"/>
+        <dvt:metricLabel position="LP_WITH_BOTTOM_LABEL" scaling="none">
+          <af:convertNumber pattern="#{bindings.AmountInStock.format}"/>
+        </dvt:metricLabel>
+      </dvt:gauge>
+    </af:form>
+  </af:document>
+</f:view>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SEmpManagerIdFkAssoc"
+  Version="12.1.2.62.39"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="ManagerIdEmp"
+    Cardinality="1"
+    Source="true"
+    Owner="oracle.summit.model.domains.Emp">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="ManagerIdEmp"/>
+      <Attr Name="_foreignKey" Value="oracle.summit.model.domains.Emp.SEmpIdPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.domains.Emp.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Emp"
+    Cardinality="-1"
+    Owner="oracle.summit.model.domains.Emp">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Emp"/>
+      <Attr Name="_foreignKey" Value="oracle.summit.model.domains.Emp.SEmpManagerIdFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.domains.Emp.ManagerId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:document title="sunburstDemo.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+    <dvt:sunburst id="t1" value="#{bindings.SRegionView1.treeModel}" var="row" displayLevelsChildren="3"
+                    summary="Sunburst Demo" legendSource="ag3">
+        <af:switcher facetName="#{row.hierTypeBinding.name}" id="s1">
+          <f:facet name="SRegionView10">
+            <dvt:sunburstNode value="#{row.CountryCount}" label="#{row.Name}" id="sn1" >
+              <dvt:attributeGroups value="#{row.CountryCount}" type="color" label="Country Count" id="ag1"/>
+            </dvt:sunburstNode>
+          </f:facet>
+          <f:facet name="SRegionView11">
+            <dvt:sunburstNode value="#{row.WarehouseCount}" label="#{row.Country}" id="sn4">
+              <dvt:attributeGroups value="#{row.WarehouseCount}" type="color" id="ag4"/>
+            </dvt:sunburstNode>
+          </f:facet>
+          <f:facet name="SRegionView12">
+            <dvt:sunburstNode value="#{row.ProductCount}" label="#{row.City}" id="sn3">
+              <dvt:attributeGroups value="#{row.ProductCount}" type="color" id="ag2"/>
+            </dvt:sunburstNode>
+          </f:facet>
+          <f:facet name="SRegionView13">
+            <dvt:sunburstNode value="#{row.AmountInStock}" label="#{row.Name}" id="sn2"
+                              shortDesc="Amount in Stock: #{row.AmountInStock}&lt;br/>Reorder Point: #{row.ReorderPoint}">
+              <dvt:attributeGroups value="#{row.AmountInStock}" type="color" label="Amount in Stock" id="ag3">
+                <dvt:attributeExceptionRule id="aer1" condition="#{(row.AmountInStock - row.ReorderPoint) gt 50}"
+                                            label="Stock Level OK">
+                  <f:attribute name="color" value="#008800"/>
+                </dvt:attributeExceptionRule>
+                <dvt:attributeExceptionRule id="aer2"
+                                            condition="#{((row.AmountInStock - row.ReorderPoint) le 50) and ((row.AmountInStock - row.ReorderPoint) gt 25)}"
+                                            label="Stock Getting Low">
+                  <f:attribute name="color" value="#FFFF33"/>
+                </dvt:attributeExceptionRule>
+                <dvt:attributeExceptionRule id="aer3" condition="#{(row.AmountInStock - row.ReorderPoint) le 25}"
+                                            label="Reorder Time">
+                  <f:attribute name="color" value="#880000"/>
+                </dvt:attributeExceptionRule>
+              </dvt:attributeGroups>
+            </dvt:sunburstNode>
+          </f:facet>
+        </af:switcher>
+      </dvt:sunburst>
+      
+    </af:form>
+  </af:document>
+</f:view>

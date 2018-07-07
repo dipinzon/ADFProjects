@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.62.49" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/treemapDemo.jsf" usageId="view_treemapDemoPageDef"/>
+    <page path="/sunburstDemo.jsf" usageId="view_sunburstDemoPageDef"/>
+    <page path="/timelineDemo.jsf" usageId="view_timelineDemoPageDef"/>
+    <page path="/timelineTest.jsf" usageId="view_timelineTestPageDef"/>
+    <page path="/hvDemo.jsf" usageId="view_hvDemoPageDef"/>
+    <page path="/hvSearchDemo.jsf" usageId="view_hvSearchDemoPageDef"/>
+    <page path="/pivotTableDemo.jsf" usageId="view_pivotTableDemoPageDef"/>
+    <page path="/gaugeDemo.jsf" usageId="view_gaugeDemoPageDef"/>
+    <page path="/gaugeSetDemo.jsf" usageId="view_gaugeSetDemoPageDef"/>
+    <page path="/gaugeInTableDemo.jsf" usageId="view_gaugeInTableDemoPageDef"/>
+    <page path="/geoPointDemo.jsf" usageId="view_geoPointDemoPageDef"/>
+    <page path="/pivotTableBarDemo.jsf" usageId="view_pivotTableBarDemoPageDef"/>
+    <page path="/geoColorTheme.jsf" usageId="view_geoColorThemePageDef"/>
+    <page path="/geoGraphTheme.jsf" usageId="view_geoPieThemePageDef"/>
+    <page path="/graphDrillDemo.jsf" usageId="view_graphDrillDemoPageDef"/>
+    <page path="/hvPanelCardVODemo.jsf" usageId="view_hvPanelCardVODemoPageDef"/>
+    <page path="/themeMapPointDemo.jsf" usageId="view_themeMapPointDemoPageDef"/>
+    <page path="/themeMapPointDemo.jsf" usageId="view_themeMapAreaDemoPageDef"/>
+    <page path="/thematicMapDemo.jsf" usageId="view_tMapPointDemoPageDef"/>
+    <page path="/tMapAreaDemo.jsf" usageId="view_tMapAreaDemoPageDef"/>
+    <page path="/tMapPointAGDemo.jsf" usageId="view_tMapPointAGDemoPageDef"/>
+    <page path="/untitled1.jsf" usageId="view_untitled1PageDef"/>
+    <page path="/projectGanttDemo.jsf" usageId="view_projectGanttDemoPageDef"/>
+    <page path="/RUGGanttDemo.jsf" usageId="view_RUGGanttDemoPageDef"/>
+    <page path="/schedGanttDemo.jsf" usageId="view_schedGanttDemoPageDef"/>
+    <page path="/RUGGanttDemo2.jsf" usageId="view_RUGGanttDemo2PageDef"/>
+    <page path="/schedGanttDemo2.jsf" usageId="view_schedGanttDemo2PageDef"/>
+    <page path="/untitled2.jsf" usageId="view_untitled2PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_treemapDemoPageDef" path="view.pageDefs.treemapDemoPageDef"/>
+    <page id="view_sunburstDemoPageDef" path="view.pageDefs.sunburstDemoPageDef"/>
+    <page id="view_timelineDemoPageDef" path="view.pageDefs.timelineDemoPageDef"/>
+    <page id="view_timelineTestPageDef" path="view.pageDefs.timelineTestPageDef"/>
+    <page id="view_hvDemoPageDef" path="view.pageDefs.hvDemoPageDef"/>
+    <page id="view_hvSearchDemoPageDef" path="view.pageDefs.hvSearchDemoPageDef"/>
+    <page id="view_pivotTableDemoPageDef" path="view.pageDefs.pivotTableDemoPageDef"/>
+    <page id="view_gaugeDemoPageDef" path="view.pageDefs.gaugeDemoPageDef"/>
+    <page id="view_gaugeSetDemoPageDef" path="view.pageDefs.gaugeSetDemoPageDef"/>
+    <page id="view_gaugeInTableDemoPageDef" path="view.pageDefs.gaugeInTableDemoPageDef"/>
+    <page id="view_geoPointDemoPageDef" path="view.pageDefs.geoPointDemoPageDef"/>
+    <page id="view_pivotTableBarDemoPageDef" path="view.pageDefs.pivotTableBarDemoPageDef"/>
+    <page id="view_geoColorThemePageDef" path="view.pageDefs.geoColorThemePageDef"/>
+    <page id="view_geoPieThemePageDef" path="view.pageDefs.geoPieThemePageDef"/>
+    <page id="view_graphDrillDemoPageDef" path="view.pageDefs.graphDrillDemoPageDef"/>
+    <page id="view_hvPanelCardVODemoPageDef" path="view.pageDefs.hvPanelCardVODemoPageDef"/>
+    <page id="view_themeMapPointDemoPageDef" path="view.pageDefs.themeMapPointDemoPageDef"/>
+    <page id="view_themeMapAreaDemoPageDef" path="view.pageDefs.themeMapAreaDemoPageDef"/>
+    <page id="view_tMapPointDemoPageDef" path="view.pageDefs.tMapPointDemoPageDef"/>
+    <page id="view_tMapAreaDemoPageDef" path="view.pageDefs.tMapAreaDemoPageDef"/>
+    <page id="view_tMapPointAGDemoPageDef" path="view.pageDefs.tMapPointAGDemoPageDef"/>
+    <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
+    <page id="view_projectGanttDemoPageDef" path="view.pageDefs.projectGanttDemoPageDef"/>
+    <page id="view_RUGGanttDemoPageDef" path="view.pageDefs.RUGGanttDemoPageDef"/>
+    <page id="view_schedGanttDemoPageDef" path="view.pageDefs.schedGanttDemoPageDef"/>
+    <page id="view_RUGGanttDemo2PageDef" path="view.pageDefs.RUGGanttDemo2PageDef"/>
+    <page id="view_schedGanttDemo2PageDef" path="view.pageDefs.schedGanttDemo2PageDef"/>
+    <page id="view_untitled2PageDef" path="view.pageDefs.untitled2PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

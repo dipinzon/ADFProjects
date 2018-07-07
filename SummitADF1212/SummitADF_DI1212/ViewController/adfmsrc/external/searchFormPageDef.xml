@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.63.3" id="searchFormPageDef" Package="external">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="SummitAppModuleDataControl" Binds="searchTerm"
+                     Name="executeCountriesQuery_searchTerm"
+                     IsQueriable="false" SourceName="${CountryId.inputValue}"
+                     SourceType="java.lang.String"/>
+    </variableIterator>
+    <iterator Binds="Root.CustomersModule.Customers"
+              DataControl="SummitAppModuleDataControl" RangeSize="25"
+              id="CustomersIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="executeCountriesQuery" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="executeCountriesQuery"
+                  IsViewObjectMethod="true"
+                  DataControl="SummitAppModuleDataControl"
+                  InstanceName="SummitAppModuleDataControl.dataProvider.Root.CustomersModule.Customers"
+                  IterBinding="CustomersIterator">
+      <NamedData NDName="searchTerm"
+                 NDValue="${bindings.executeCountriesQuery_searchTerm}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="searchTerm">
+      <AttrNames>
+        <Item Value="executeCountriesQuery_searchTerm"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomersIterator" id="Country">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

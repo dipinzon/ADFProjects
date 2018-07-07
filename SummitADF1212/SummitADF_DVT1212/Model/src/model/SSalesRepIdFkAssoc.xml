@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SSalesRepIdFkAssoc"
+  Version="12.1.2.65.67"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="SEmp"
+    Cardinality="1"
+    Source="true"
+    Owner="model.SEmp">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SEmp"/>
+      <Attr Name="_foreignKey" Value="model.SEmp.SEmpIdPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SEmp.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="SCustomer"
+    Cardinality="-1"
+    Owner="model.SCustomer">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SCustomer"/>
+      <Attr Name="_foreignKey" Value="model.SCustomer.SSalesRepIdFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.SCustomer.SalesRepId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

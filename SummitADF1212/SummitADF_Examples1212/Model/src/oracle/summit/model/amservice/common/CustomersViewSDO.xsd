@@ -1,0 +1,31 @@
+<xsd:schema xmlns:sdoJava="commonj.sdo/java" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sdoXML="commonj.sdo/xml"
+     targetNamespace="/oracle/summit/model/amservice/common/" xmlns="/oracle/summit/model/amservice/common/"
+     elementFormDefault="qualified" sdoJava:package="oracle.summit.model.amservice.common">
+    <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+    <xsd:import schemaLocation="classpath:/xml/sdoXML.xsd" namespace="commonj.sdo/xml"/>
+    <xsd:include schemaLocation="OrdersViewSDO.xsd"/>
+    <xsd:complexType name="CustomersViewSDO">
+        <xsd:annotation>
+            <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+                <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                    <attribute>Id</attribute>
+                </key>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Id" type="xsd:int" minOccurs="0" sdoXML:dataType="sdoJava:IntObject"/>
+            <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="Phone" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="Address" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="City" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="State" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="CountryId" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="ZipCode" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="CreditRatingId" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="SalesRepId" type="xsd:int" minOccurs="0" nillable="true"/>
+            <xsd:element name="Comments" type="xsd:string" minOccurs="0" nillable="true"/>
+            <xsd:element name="OrdersView" type="OrdersViewSDO" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="customersViewSDO" type="CustomersViewSDO"/>
+</xsd:schema>

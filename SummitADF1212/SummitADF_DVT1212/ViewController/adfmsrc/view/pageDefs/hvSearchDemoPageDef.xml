@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.65.21" id="hvSearchDemoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="RootEmployeeViewObj2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="RootEmployeeViewObj2Iterator"/>
+    <iterator Binds="EmployeeSearchResults1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="EmployeeSearchResults1Iterator"/>
+    <variableIterator id="variables">
+      <variableUsage DataControl="AppModuleDataControl" Binds="EmployeeSearchResults1.variablesMap.searchName"
+                     Name="ExecuteWithParams_searchName" IsQueriable="false"/>
+      <variableUsage DataControl="AppModuleDataControl" Binds="RootEmployeeViewObj2.variablesMap.rootEmpno"
+                     Name="ExecuteWithParams1_rootEmpno" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <tree IterBinding="RootEmployeeViewObj2Iterator" id="RootEmployeeViewObj2">
+      <nodeDefinition DefName="model.RootEmployeeViewObj" Name="RootEmployeeViewObj20">
+        <AttrNames>
+          <Item Value="ManagerId"/>
+          <Item Value="TitleId"/>
+          <Item Value="Userid"/>
+          <Item Value="Comments"/>
+          <Item Value="DeptId"/>
+          <Item Value="StartDate"/>
+          <Item Value="Email"/>
+          <Item Value="Salary"/>
+          <Item Value="FirstName"/>
+          <Item Value="Id"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="LastName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SEmpView">
+            <Properties>
+              <CustomProperties>
+                <Property Name="hierarchyType" Value="children"/>
+              </CustomProperties>
+            </Properties>
+          </Item>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.SEmpView" Name="RootEmployeeViewObj21">
+        <AttrNames>
+          <Item Value="ManagerId"/>
+          <Item Value="TitleId"/>
+          <Item Value="Userid"/>
+          <Item Value="Comments"/>
+          <Item Value="DeptId"/>
+          <Item Value="StartDate"/>
+          <Item Value="Email"/>
+          <Item Value="Salary"/>
+          <Item Value="FirstName"/>
+          <Item Value="Id"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="LastName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SEmpView">
+            <Properties>
+              <CustomProperties>
+                <Property Name="hierarchyType" Value="children"/>
+              </CustomProperties>
+            </Properties>
+          </Item>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="EmployeeSearchResults1Iterator" id="EmployeeSearchResults">
+      <nodeDefinition DefName="model.EmployeeSearchResults" Name="ExecuteWithParams">
+        <AttrNames>
+          <Item Value="Comments"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="DeptId"/>
+          <Item Value="Email"/>
+          <Item Value="FirstName"/>
+          <Item Value="Id"/>
+          <Item Value="LastName"/>
+          <Item Value="ManagerId"/>
+          <Item Value="Salary"/>
+          <Item Value="StartDate"/>
+          <Item Value="TitleId"/>
+          <Item Value="Userid"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EmployeeSearchResults1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="searchName" NDType="java.lang.String" NDValue="${bindings.ExecuteWithParams_searchName}"/>
+    </action>
+    <action IterBinding="RootEmployeeViewObj2Iterator" id="ExecuteWithParams1" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="rootEmpno" NDType="java.lang.Integer" NDValue="${bindings.ExecuteWithParams1_rootEmpno}"/>
+    </action>
+    <attributeValues id="searchName" IterBinding="variables">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_searchName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues id="rootEmpno" IterBinding="variables">
+      <AttrNames>
+        <Item Value="ExecuteWithParams1_rootEmpno"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

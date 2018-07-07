@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.65.79" id="MainPagePageDef"
+                Package="oracle.summitdi.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="SamplesList" id="SamplesListIterator"/>
+    <accessorIterator MasterBinding="SamplesListIterator" Binds="samples" RangeSize="25" DataControl="SamplesList"
+                      BeanClass="java.util.List" id="samplesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="samplesIterator" id="samples">
+      <nodeDefinition DefName="oracle.summit.pojo.Sample" Name="samples0">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="link"/>
+          <Item Value="image"/>
+          <Item Value="description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

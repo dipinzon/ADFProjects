@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.summitdi.model.services.SummitAppModule">
+      <AppModuleConfig name="SummitAppModuleLocal" ApplicationName="oracle.summitdi.model.services.SummitAppModule" DeployPlatform="LOCAL" jbo.project="oracle.summitdi.model.Model">
+         <Security AppModuleJndiName="oracle.summitdi.model.services.SummitAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/summit_adfDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="SummitAppModuleShared" ApplicationName="oracle.summitdi.model.services.SummitAppModule" DeployPlatform="LOCAL" jbo.project="oracle.summitdi.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="oracle.summitdi.model.services.SummitAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/summit_adfDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

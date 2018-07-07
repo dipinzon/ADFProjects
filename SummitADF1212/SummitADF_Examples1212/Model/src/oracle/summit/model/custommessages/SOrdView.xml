@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SOrdView"
+  Version="12.1.2.62.39"
+  InheritPersonalization="true"
+  SelectList="SOrd.ID, 
+       SOrd.CUSTOMER_ID, 
+       SOrd.DATE_ORDERED, 
+       SOrd.DATE_SHIPPED, 
+       SOrd.SALES_REP_ID, 
+       SOrd.TOTAL, 
+       SOrd.PAYMENT_TYPE_ID, 
+       SOrd.ORDER_FILLED"
+  FromList="S_ORD SOrd"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="oracle.summit.base.SummitViewRowImpl"
+  ComponentClass="oracle.summit.base.SummitViewObjectImpl"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="SOrd"
+    Entity="oracle.summit.model.custommessages.SOrd"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SOrd"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="CustomerId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CustomerId"
+    EntityUsage="SOrd"
+    AliasName="CUSTOMER_ID"/>
+  <ViewAttribute
+    Name="DateOrdered"
+    PrecisionRule="true"
+    EntityAttrName="DateOrdered"
+    EntityUsage="SOrd"
+    AliasName="DATE_ORDERED"/>
+  <ViewAttribute
+    Name="DateShipped"
+    PrecisionRule="true"
+    EntityAttrName="DateShipped"
+    EntityUsage="SOrd"
+    AliasName="DATE_SHIPPED"/>
+  <ViewAttribute
+    Name="SalesRepId"
+    PrecisionRule="true"
+    EntityAttrName="SalesRepId"
+    EntityUsage="SOrd"
+    AliasName="SALES_REP_ID"/>
+  <ViewAttribute
+    Name="Total"
+    PrecisionRule="true"
+    EntityAttrName="Total"
+    EntityUsage="SOrd"
+    AliasName="TOTAL"/>
+  <ViewAttribute
+    Name="PaymentTypeId"
+    PrecisionRule="true"
+    EntityAttrName="PaymentTypeId"
+    EntityUsage="SOrd"
+    AliasName="PAYMENT_TYPE_ID"/>
+  <ViewAttribute
+    Name="OrderFilled"
+    PrecisionRule="true"
+    EntityAttrName="OrderFilled"
+    EntityUsage="SOrd"
+    AliasName="ORDER_FILLED"/>
+</ViewObject>

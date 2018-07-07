@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?> 
+<CustomersViewRow>
+   <Id>16</Id>
+   <!-- This will update Customer's ConfirmedEmail attribute -->
+   <City>Houston</City>
+   <OrdersView>
+      <!-- This will be an update since it does exist -->
+      <OrdersViewRow>
+         <Id>1018</Id>
+         <DateShipped>2013-03-13</DateShipped>
+      </OrdersViewRow>
+      <!-- This will be an insert since it doesn't exist -->
+      <OrdersViewRow>
+         <Id>9999</Id>
+         <CustomerId>16</CustomerId>
+         <Total>9999.00</Total>
+      </OrdersViewRow>
+      <!-- This will be deleted -->
+      <OrdersViewRow bc4j-action="remove">
+         <Id>1008</Id>
+      </OrdersViewRow>        
+   </OrdersView>
+</CustomersViewRow>

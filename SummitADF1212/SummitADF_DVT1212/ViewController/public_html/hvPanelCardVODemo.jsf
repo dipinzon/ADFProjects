@@ -1,0 +1,472 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="hvPanelCardVODemo.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <dvt:hierarchyViewer id="hv1" var="node" value="#{bindings.SalesRepViewObj2.treeModel}"
+                                 selectionListener="#{bindings.SalesRepViewObj2.treeModel.makeCurrent}"
+                                 detailWindow="none" layout="hier_vert_top"
+                                 levelFetchSize="5" styleClass="AFStretchWidth"
+                                 summary="HV Alternate Panel Card VO Demo">
+                <dvt:link linkType="orthogonalRounded" id="l1"/>
+                <dvt:node type="model.SalesRepViewObj" width="233" height="233" id="n1">
+                    <f:facet name="zoom100">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl1">
+                            <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                <af:panelGroupLayout id="pgl37">
+                                    <af:image source="/images/#{node.Id}.png" shortDesc="Employee Image" id="i1"
+                                              styleClass="AFHVNodeImageSize"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout layout="vertical" id="pgl3">
+                                    <af:outputText value="#{node.LastName}" shortDesc="#{node.hints.LastName.tooltip}"
+                                                   styleClass="AFHVNodeTitleTextStyle" id="ot27"/>
+                                    <af:outputText value="#{node.FirstName}" shortDesc="#{node.hints.FirstName.tooltip}"
+                                                   styleClass="AFHVNodeSubtitleTextStyle" id="ot30"/>
+                                    <af:panelLabelAndMessage label="#{node.hints.Id.label}"
+                                                             styleClass="AFHVNodeLabelStyle" id="plam27">
+                                        <af:outputText value="#{node.Id}" shortDesc="#{node.hints.Id.tooltip}"
+                                                       styleClass="AFHVNodeTextStyle" id="ot19">
+                                            <af:convertNumber groupingUsed="false" pattern="#{node.hints.Id.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <af:spacer height="5" id="s1"/>
+                            <dvt:panelCard effect="slide_horz" styleClass="AFHVNodePadding" id="pc1">
+                                <af:showDetailItem text="Contact Details" id="sdi1">
+                                    <af:spacer height="2" id="s2"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl1">
+                                        <af:panelLabelAndMessage label="#{node.hints.Email.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam1">
+                                            <af:outputText value="#{node.Email}" shortDesc="#{node.hints.Email.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot1"/>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.hints.Userid.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam19">
+                                            <af:outputText value="#{node.Userid}"
+                                                           shortDesc="#{node.hints.Userid.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot15"/>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Salary Details" id="sdi2">
+                                    <af:spacer height="2" id="s3"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl2">
+                                        <af:panelLabelAndMessage label="#{node.hints.Salary.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam11">
+                                            <af:outputText value="#{node.Salary}"
+                                                           shortDesc="#{node.hints.Salary.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot4">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.Salary.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.hints.CommissionPct.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam5">
+                                            <af:outputText value="#{node.CommissionPct}"
+                                                           shortDesc="#{node.hints.CommissionPct.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot16">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.CommissionPct.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Job Details" id="sdi3">
+                                    <af:spacer height="2" id="s4"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl3">
+                                        <af:panelLabelAndMessage label="#{node.hints.StartDate.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam3">
+                                            <af:outputText value="#{node.StartDate}"
+                                                           shortDesc="#{node.hints.StartDate.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot10">
+                                                <af:convertDateTime pattern="#{node.hints.StartDate.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.hints.DeptId.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam18">
+                                            <af:outputText value="#{node.DeptId}"
+                                                           shortDesc="#{node.hints.DeptId.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot9">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.DeptId.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Additional Details" id="sdi4">
+                                    <af:spacer height="2" id="s5"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl4">
+                                        <af:panelLabelAndMessage label="#{node.hints.TitleId.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam6">
+                                            <af:outputText value="#{node.TitleId}"
+                                                           shortDesc="#{node.hints.TitleId.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot37">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.TitleId.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.hints.ManagerId.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam20">
+                                            <af:outputText value="#{node.ManagerId}"
+                                                           shortDesc="#{node.hints.ManagerId.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot21">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.ManagerId.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Comments" id="sdi5">
+                                    <af:spacer height="2" id="s6"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl5">
+                                        <af:panelLabelAndMessage label="#{node.hints.Comments.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam14">
+                                            <af:outputText value="#{node.Comments}"
+                                                           shortDesc="#{node.hints.Comments.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot11"/>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </dvt:panelCard>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom75">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl4">
+                            <af:panelGroupLayout layout="horizontal" id="pgl5">
+                                <af:panelGroupLayout layout="vertical" id="pgl6">
+                                    <af:outputText value="#{node.LastName}" shortDesc="#{node.hints.LastName.tooltip}"
+                                                   styleClass="AFHVNodeTitleTextStyle75" id="ot2"/>
+                                    <af:outputText value="#{node.FirstName}" shortDesc="#{node.hints.FirstName.tooltip}"
+                                                   styleClass="AFHVNodeSubtitleTextStyle75" id="ot32"/>
+                                    <af:outputText value="#{node.Id}" shortDesc="#{node.hints.Id.tooltip}"
+                                                   styleClass="AFHVNodeTextStyle75" id="ot22">
+                                        <af:convertNumber groupingUsed="false" pattern="#{node.hints.Id.format}"/>
+                                    </af:outputText>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <af:spacer height="5" id="s7"/>
+                            <dvt:panelCard effect="slide_horz" styleClass="AFHVNodePadding" id="pc2">
+                                <af:showDetailItem text="Contact Details" id="sdi6">
+                                    <af:spacer height="2" id="s8"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl6">
+                                        <af:panelLabelAndMessage label="#{node.hints.Email.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle75" id="plam21">
+                                            <af:outputText value="#{node.Email}" shortDesc="#{node.hints.Email.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle75" id="ot13"/>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.hints.Userid.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle75" id="plam13">
+                                            <af:outputText value="#{node.Userid}"
+                                                           shortDesc="#{node.hints.Userid.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle75" id="ot14"/>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Salary Details" id="sdi7">
+                                    <af:spacer height="2" id="s9"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl7">
+                                        <af:panelLabelAndMessage label="#{node.hints.Salary.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle75" id="plam24">
+                                            <af:outputText value="#{node.Salary}"
+                                                           shortDesc="#{node.hints.Salary.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle75" id="ot18">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.Salary.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.hints.CommissionPct.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle75" id="plam9">
+                                            <af:outputText value="#{node.CommissionPct}"
+                                                           shortDesc="#{node.hints.CommissionPct.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle75" id="ot12">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.CommissionPct.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </dvt:panelCard>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom50">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl7">
+                            <af:panelGroupLayout layout="horizontal" id="pgl8">
+                                <af:panelGroupLayout layout="vertical" id="pgl9">
+                                    <af:outputText value="#{node.LastName}" shortDesc="#{node.hints.LastName.tooltip}"
+                                                   styleClass="AFHVNodeTitleTextStyle50" id="ot7"/>
+                                    <af:outputText value="#{node.FirstName}" shortDesc="#{node.hints.FirstName.tooltip}"
+                                                   styleClass="AFHVNodeSubtitleTextStyle50" id="ot25"/>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom25">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePaddingSmall"
+                                             layout="vertical" id="pgl10">
+                            <af:panelGroupLayout layout="horizontal" id="pgl11">
+                                <af:panelGroupLayout layout="vertical" id="pgl12">
+                                    <af:outputText value="#{node.LastName}" shortDesc="#{node.hints.LastName.tooltip}"
+                                                   styleClass="AFHVNodeTitleTextStyle25" id="ot24"/>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </dvt:node>
+                <dvt:node type="model.SOrdView" width="233" height="233" id="n2">
+                    <f:facet name="zoom100">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl13">
+                            <af:panelGroupLayout layout="horizontal" id="pgl14">
+                                <af:panelGroupLayout layout="vertical" id="pgl15">
+                                    <af:panelLabelAndMessage label="#{node.hints.Id.label}"
+                                                             styleClass="AFHVNodeTitleLabelStyle" id="plam25">
+                                        <af:outputText value="#{node.Id}" shortDesc="#{node.hints.Id.tooltip}"
+                                                       styleClass="AFHVNodeTitleTextStyle" id="ot5">
+                                            <af:convertNumber groupingUsed="false" pattern="#{node.hints.Id.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{node.hints.Total.label}"
+                                                             styleClass="AFHVNodeSubtitleLabelStyle" id="plam15">
+                                        <af:outputText value="#{node.Total}" shortDesc="#{node.hints.Total.tooltip}"
+                                                       styleClass="AFHVNodeSubtitleTextStyle" id="ot17">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{node.hints.Total.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <af:spacer height="5" id="s10"/>
+                            <dvt:panelCard effect="slide_horz" styleClass="AFHVNodePadding" id="pc3">
+                                <af:showDetailItem text="Customer Details" id="sdi8">
+                                    <af:spacer height="2" id="s11"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl8">
+                                        <af:panelLabelAndMessage label="#{node.SCustomerView.hints.Name.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam22">
+                                            <af:outputText value="#{node.SCustomerView.Name}"
+                                                           shortDesc="#{node.SCustomerView.hints.Name.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot6"/>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.SCustomerView.hints.City.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam4">
+                                            <af:outputText value="#{node.SCustomerView.City}"
+                                                           shortDesc="#{node.SCustomerView.hints.City.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot28"/>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.SCustomerView.hints.Phone.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam7">
+                                            <af:outputText value="#{node.SCustomerView.Phone}"
+                                                           shortDesc="#{node.SCustomerView.hints.Phone.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot38"/>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Order Details" id="sdi9">
+                                    <af:spacer height="2" id="s12"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl9">
+                                        <af:panelLabelAndMessage label="#{node.hints.DateOrdered.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam26">
+                                            <af:outputText value="#{node.DateOrdered}"
+                                                           shortDesc="#{node.hints.DateOrdered.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot31">
+                                                <af:convertDateTime pattern="#{node.hints.DateOrdered.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.hints.DateShipped.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam8">
+                                            <af:outputText value="#{node.DateShipped}"
+                                                           shortDesc="#{node.hints.DateShipped.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot29">
+                                                <af:convertDateTime pattern="#{node.hints.DateShipped.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </dvt:panelCard>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom75">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl16">
+                            <af:panelGroupLayout layout="horizontal" id="pgl17">
+                                <af:panelGroupLayout layout="vertical" id="pgl18">
+                                    <af:outputText value="#{node.Id}" shortDesc="#{node.hints.Id.tooltip}"
+                                                   styleClass="AFHVNodeTitleTextStyle75" id="ot36">
+                                        <af:convertNumber groupingUsed="false" pattern="#{node.hints.Id.format}"/>
+                                    </af:outputText>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <af:spacer height="5" id="s13"/>
+                            <dvt:panelCard effect="slide_horz" styleClass="AFHVNodePadding" id="pc4">
+                                <af:showDetailItem text="Customer Details" id="sdi10">
+                                    <af:spacer height="2" id="s14"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl10"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Order Details" id="sdi11">
+                                    <af:spacer height="2" id="s15"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl11"/>
+                                </af:showDetailItem>
+                            </dvt:panelCard>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom50">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl19">
+                            <af:panelGroupLayout layout="horizontal" id="pgl20">
+                                <af:panelGroupLayout layout="vertical" id="pgl21">
+                                    <af:outputText value="#{node.Id}" shortDesc="#{node.hints.Id.tooltip}"
+                                                   styleClass="AFHVNodeTitleTextStyle50" id="ot8">
+                                        <af:convertNumber groupingUsed="false" pattern="#{node.hints.Id.format}"/>
+                                    </af:outputText>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom25">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePaddingSmall"
+                                             layout="vertical" id="pgl22">
+                            <af:panelGroupLayout layout="horizontal" id="pgl23">
+                                <af:panelGroupLayout layout="vertical" id="pgl24">
+                                    <af:outputText value="#{node.Id}" shortDesc="#{node.hints.Id.tooltip}"
+                                                   styleClass="AFHVNodeTitleTextStyle25" id="ot3">
+                                        <af:convertNumber groupingUsed="false" pattern="#{node.hints.Id.format}"/>
+                                    </af:outputText>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </dvt:node>
+                <dvt:node type="model.SItemView" width="233" height="233" id="n3">
+                    <f:facet name="zoom100">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl25">
+                            <af:panelGroupLayout layout="horizontal" id="pgl26">
+                                <af:panelGroupLayout layout="vertical" id="pgl27">
+                                    <af:panelLabelAndMessage label="#{node.hints.ItemId.label}"
+                                                             styleClass="AFHVNodeTitleLabelStyle" id="plam23">
+                                        <af:outputText value="#{node.ItemId}" shortDesc="#{node.hints.ItemId.tooltip}"
+                                                       styleClass="AFHVNodeTitleTextStyle" id="ot35">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{node.hints.ItemId.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{node.hints.Price.label}"
+                                                             styleClass="AFHVNodeSubtitleLabelStyle" id="plam16">
+                                        <af:outputText value="#{node.Price}" shortDesc="#{node.hints.Price.tooltip}"
+                                                       styleClass="AFHVNodeSubtitleTextStyle" id="ot20">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{node.hints.Price.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{node.hints.QuantityShipped.label}"
+                                                             styleClass="AFHVNodeLabelStyle" id="plam10">
+                                        <af:outputText value="#{node.QuantityShipped}"
+                                                       shortDesc="#{node.hints.QuantityShipped.tooltip}"
+                                                       styleClass="AFHVNodeTextStyle" id="ot23">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{node.hints.QuantityShipped.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <af:spacer height="5" id="s16"/>
+                            <dvt:panelCard effect="slide_horz" styleClass="AFHVNodePadding" id="pc5">
+                                <af:showDetailItem text="Item Details" id="sdi12">
+                                    <af:spacer height="2" id="s17"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl12">
+                                        <af:panelLabelAndMessage label="#{node.hints.ProductId.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam2">
+                                            <af:outputText value="#{node.ProductId}"
+                                                           shortDesc="#{node.hints.ProductId.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot26">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.ProductId.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Order Details" id="sdi13">
+                                    <af:spacer height="2" id="s18"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl13">
+                                        <af:panelLabelAndMessage label="#{node.hints.Quantity.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam12">
+                                            <af:outputText value="#{node.Quantity}"
+                                                           shortDesc="#{node.hints.Quantity.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot34">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.Quantity.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{node.hints.OrdId.label}"
+                                                                 styleClass="AFHVPanelCardLabelStyle" id="plam17">
+                                            <af:outputText value="#{node.OrdId}" shortDesc="#{node.hints.OrdId.tooltip}"
+                                                           styleClass="AFHVPanelCardTextStyle" id="ot33">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{node.hints.OrdId.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </dvt:panelCard>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom75">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl28">
+                            <af:panelGroupLayout layout="horizontal" id="pgl29">
+                                <af:panelGroupLayout layout="vertical" id="pgl30"/>
+                            </af:panelGroupLayout>
+                            <af:spacer height="5" id="s19"/>
+                            <dvt:panelCard effect="slide_horz" styleClass="AFHVNodePadding" id="pc6">
+                                <af:showDetailItem text="Item Details" id="sdi14">
+                                    <af:spacer height="2" id="s20"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl14"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Order Details" id="sdi15">
+                                    <af:spacer height="2" id="s21"/>
+                                    <af:panelFormLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                                        id="pfl15"/>
+                                </af:showDetailItem>
+                            </dvt:panelCard>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom50">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePadding"
+                                             layout="vertical" id="pgl31">
+                            <af:panelGroupLayout layout="horizontal" id="pgl32">
+                                <af:panelGroupLayout layout="vertical" id="pgl33"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="zoom25">
+                        <af:panelGroupLayout styleClass="AFStretchWidth AFHVNodeStretchHeight AFHVNodePaddingSmall"
+                                             layout="vertical" id="pgl34">
+                            <af:panelGroupLayout layout="horizontal" id="pgl35">
+                                <af:panelGroupLayout layout="vertical" id="pgl36"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </dvt:node>
+            </dvt:hierarchyViewer>
+        </af:form>
+    </af:document>
+</f:view>

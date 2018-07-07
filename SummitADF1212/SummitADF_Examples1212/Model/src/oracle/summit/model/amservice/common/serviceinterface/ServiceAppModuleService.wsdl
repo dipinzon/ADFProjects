@@ -1,0 +1,264 @@
+<wsdl:definitions
+     name="ServiceAppModuleService"
+     targetNamespace="/oracle/summit/model/amservice/common/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="/oracle/summit/model/amservice/common/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="/oracle/summit/model/amservice/common/types/"
+    >
+    <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="classpath:/META-INF/wsdl/ServiceException.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="/oracle/summit/model/amservice/common/types/" schemaLocation="ServiceAppModuleService.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="ServiceAppModuleService_createCustomersView">
+        <wsdl:part name="parameters" element="types:createCustomersView"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_createCustomersViewResponse">
+        <wsdl:part name="parameters" element="types:createCustomersViewResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_updateCustomersView">
+        <wsdl:part name="parameters" element="types:updateCustomersView"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_updateCustomersViewResponse">
+        <wsdl:part name="parameters" element="types:updateCustomersViewResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_deleteCustomersView">
+        <wsdl:part name="parameters" element="types:deleteCustomersView"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_deleteCustomersViewResponse">
+        <wsdl:part name="parameters" element="types:deleteCustomersViewResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_mergeCustomersView">
+        <wsdl:part name="parameters" element="types:mergeCustomersView"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_mergeCustomersViewResponse">
+        <wsdl:part name="parameters" element="types:mergeCustomersViewResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_createOrdersView">
+        <wsdl:part name="parameters" element="types:createOrdersView"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_createOrdersViewResponse">
+        <wsdl:part name="parameters" element="types:createOrdersViewResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_updateOrdersView">
+        <wsdl:part name="parameters" element="types:updateOrdersView"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_updateOrdersViewResponse">
+        <wsdl:part name="parameters" element="types:updateOrdersViewResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_deleteOrdersView">
+        <wsdl:part name="parameters" element="types:deleteOrdersView"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_deleteOrdersViewResponse">
+        <wsdl:part name="parameters" element="types:deleteOrdersViewResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_mergeOrdersView">
+        <wsdl:part name="parameters" element="types:mergeOrdersView"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_mergeOrdersViewResponse">
+        <wsdl:part name="parameters" element="types:mergeOrdersViewResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_getDfltCtrlHints">
+        <wsdl:part name="parameters" element="types:getDfltCtrlHints"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_getDfltCtrlHintsResponse">
+        <wsdl:part name="parameters" element="types:getDfltCtrlHintsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_findOrdersViewOrdersViewCriteria">
+        <wsdl:part name="parameters" element="types:findOrdersViewOrdersViewCriteria"/>
+    </wsdl:message>
+    <wsdl:message name="ServiceAppModuleService_findOrdersViewOrdersViewCriteriaResponse">
+        <wsdl:part name="parameters" element="types:findOrdersViewOrdersViewCriteriaResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ServiceAppModuleService">
+        <wsdl:documentation>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="CustomersView" SDOName="tns:CustomersViewSDO"
+                 CreateOpName="createCustomersView" UpdateOpName="updateCustomersView" DeleteOpName="deleteCustomersView"
+                 MergeOpName="mergeCustomersView"/>
+            <ViewInstance xmlns="http://xmlns.oracle.com/adf/svc/metadata/" Name="OrdersView" SDOName="tns:OrdersViewSDO"
+                 CreateOpName="createOrdersView" UpdateOpName="updateOrdersView" DeleteOpName="deleteOrdersView"
+                 MergeOpName="mergeOrdersView"/>
+        </wsdl:documentation>
+        <wsdl:operation name="createCustomersView">
+            <wsdl:input message="tns:ServiceAppModuleService_createCustomersView"/>
+            <wsdl:output message="tns:ServiceAppModuleService_createCustomersViewResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateCustomersView">
+            <wsdl:input message="tns:ServiceAppModuleService_updateCustomersView"/>
+            <wsdl:output message="tns:ServiceAppModuleService_updateCustomersViewResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteCustomersView">
+            <wsdl:input message="tns:ServiceAppModuleService_deleteCustomersView"/>
+            <wsdl:output message="tns:ServiceAppModuleService_deleteCustomersViewResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeCustomersView">
+            <wsdl:input message="tns:ServiceAppModuleService_mergeCustomersView"/>
+            <wsdl:output message="tns:ServiceAppModuleService_mergeCustomersViewResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createOrdersView">
+            <wsdl:input message="tns:ServiceAppModuleService_createOrdersView"/>
+            <wsdl:output message="tns:ServiceAppModuleService_createOrdersViewResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrdersView">
+            <wsdl:input message="tns:ServiceAppModuleService_updateOrdersView"/>
+            <wsdl:output message="tns:ServiceAppModuleService_updateOrdersViewResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrdersView">
+            <wsdl:input message="tns:ServiceAppModuleService_deleteOrdersView"/>
+            <wsdl:output message="tns:ServiceAppModuleService_deleteOrdersViewResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrdersView">
+            <wsdl:input message="tns:ServiceAppModuleService_mergeOrdersView"/>
+            <wsdl:output message="tns:ServiceAppModuleService_mergeOrdersViewResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltCtrlHints">
+            <wsdl:input message="tns:ServiceAppModuleService_getDfltCtrlHints"/>
+            <wsdl:output message="tns:ServiceAppModuleService_getDfltCtrlHintsResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findOrdersViewOrdersViewCriteria">
+            <wsdl:input message="tns:ServiceAppModuleService_findOrdersViewOrdersViewCriteria"/>
+            <wsdl:output message="tns:ServiceAppModuleService_findOrdersViewOrdersViewCriteriaResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ServiceAppModuleServiceSoapHttp" type="tns:ServiceAppModuleService">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="createCustomersView">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/createCustomersView"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateCustomersView">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/updateCustomersView"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteCustomersView">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/deleteCustomersView"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="mergeCustomersView">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/mergeCustomersView"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createOrdersView">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/createOrdersView"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateOrdersView">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/updateOrdersView"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteOrdersView">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/deleteOrdersView"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="mergeOrdersView">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/mergeOrdersView"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDfltCtrlHints">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/getDfltCtrlHints"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findOrdersViewOrdersViewCriteria">
+            <soap:operation soapAction="/oracle/summit/model/amservice/common/findOrdersViewOrdersViewCriteria"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ServiceAppModuleService">
+        <wsdl:port name="ServiceAppModuleServiceSoapHttpPort" binding="tns:ServiceAppModuleServiceSoapHttp">
+            <soap:address location="http://localhost:7101/SummitADF-Model-context-root/ServiceAppModuleService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="MainPage.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                <f:facet name="header">
+                    <af:panelGroupLayout id="pgl1" layout="horizontal" halign="center">
+                        <af:outputText value="Summit sample application for ADF Desktop Integration" id="ot1"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="center">
+                    <af:panelGridLayout id="pgl2">
+                    <af:gridRow height="15%" id="gr2">
+                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc3">
+                     <af:panelGroupLayout id="pg5" layout="vertical" halign="center" styleClass="AFStretchWidth"
+                                   valign="top">
+                <af:panelBox id="pb1" showDisclosure="false"
+                             inlineStyle="width:800px; text-align:justify;">
+                  <f:facet name="toolbar">
+                    <af:menuBar id="mb1">
+                      <af:menu text="Available Demos" id="me1">
+                        <af:goMenuItem text="Editable Table Sample" id="gmi1"
+                                       destination="/excel/EditCustomers.xlsx"/>
+                        <af:goMenuItem text="Navigation Form Sample" id="gmi2"
+                                       destination="/excel/EditWarehouses.xlsx"/>
+                        <af:goMenuItem text="Editable Table With Web Picker" id="gmi3"
+                                       destination="/excel/EditableCustomerSearch.xlsx"/>
+                      <af:goMenuItem text="Form and Table Quick Location Change" id="gmi4"
+                                       destination="/excel/WarehouseLocations.xlsx"/>
+                      
+                      </af:menu>
+                    </af:menuBar>
+                  </f:facet>
+                  <af:outputFormatted id="of1"
+                                      value="The Summit sample application for ADF Desktop Integration is a set of sample demonstrations that illustrate the main capabilities of ADF Desktop Integration. Select a demo from the carrousel, or from the menu in the top-right corner, to access the runtime workbooks."
+                                      styleUsage="instruction"
+                                      inlineStyle="font-size:small;"/>
+                </af:panelBox>
+                </af:panelGroupLayout>
+                     </af:gridCell>
+                    </af:gridRow>
+                        <af:gridRow height="85%" id="gr1">
+                            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                                <af:decorativeBox theme="default" id="db1">
+                                    <f:facet name="center">
+                                        <af:carousel currentItemKey="#{bindings.samples.treeModel.rootCurrencyRowKey}"
+                                                     value="#{bindings.samples.treeModel}" var="item" id="c1">
+                                            <f:facet name="nodeStamp">
+                                                <af:carouselItem id="ci1">
+                                                    <af:panelGroupLayout id="pgl4" styleClass="AFStretchWidth"
+                                                                         halign="center" valign="middle"
+                                                                         layout="vertical">
+                                                        <af:spacer width="10" height="20" id="spacer3"/>
+                                                        <af:outputLabel value="#{item.bindings.name.inputValue}"
+                                                                        id="ol1" inlineStyle="font-size:medium;"/>
+                                                        <af:spacer width="10" height="10" id="s1"/>
+                                                        <af:image source="#{item.bindings.image}" id="i1"
+                                                                  styleClass="AFStretchWidth"/>
+                                                        <af:spacer width="10" height="10" id="spacer1"/>
+                                                        <af:outputText value="#{item.bindings.description.inputValue}"
+                                                                       id="ot2" inlineStyle="font-size:medium;"/>
+                                                        <af:spacer width="10" height="10" id="spacer2"/>
+                                                        <af:button text="Download workbook" id="b1"
+                                                                   destination="#{item.bindings.link}"
+                                                                   inlineStyle="font-size:medium;"/>
+                                                    </af:panelGroupLayout>
+                                                </af:carouselItem>
+                                            </f:facet>
+                                        </af:carousel>
+                                    </f:facet>
+                                </af:decorativeBox>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

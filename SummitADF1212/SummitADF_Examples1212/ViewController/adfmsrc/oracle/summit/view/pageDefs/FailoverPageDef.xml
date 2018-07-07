@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.65.61" id="FailoverPageDef"
+                Package="oracle.summit.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="createEmployee_name" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="createEmployee_email" IsQueriable="false"/>
+      <variable Type="int" Name="createEmployee_salary" IsQueriable="false"/>
+      <variable Type="java.util.Date" Name="createEmployee_hiredate" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="root" RangeSize="25" DataControl="EmployeesManagement" id="EmployeesManagementIterator"
+              ChangeEventPolicy="ppr"/>
+    <accessorIterator MasterBinding="EmployeesManagementIterator" Binds="employees" RangeSize="25"
+                      DataControl="EmployeesManagement" BeanClass="oracle.summit.failover.Employee"
+                      id="employeesIterator" ChangeEventPolicy="ppr"/>
+    <methodIterator Binds="createEmployee.result" DataControl="EmployeesManagement" RangeSize="25" BeanClass="void"
+                    id="createEmployeeIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="employeesIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="employeesIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="employeesIterator" id="salary">
+      <AttrNames>
+        <Item Value="salary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="employeesIterator" id="hireDate">
+      <AttrNames>
+        <Item Value="hireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="employeesIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="employeesIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="employeesIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="employeesIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <methodAction id="createEmployee" RequiresUpdateModel="true" Action="invokeMethod" MethodName="createEmployee"
+                  IsViewObjectMethod="false" DataControl="EmployeesManagement"
+                  InstanceName="data.EmployeesManagement.dataProvider"
+                  ReturnName="data.EmployeesManagement.methodResults.createEmployee_EmployeesManagement_dataProvider_createEmployee_result">
+      <NamedData NDName="name" NDType="java.lang.String" NDValue="${bindings.createEmployee_name}"/>
+      <NamedData NDName="email" NDType="java.lang.String" NDValue="${bindings.createEmployee_email}"/>
+      <NamedData NDName="salary" NDType="int" NDValue="${bindings.createEmployee_salary}"/>
+      <NamedData NDName="hiredate" NDType="java.util.Date" NDValue="${bindings.createEmployee_hiredate}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="name1">
+      <AttrNames>
+        <Item Value="createEmployee_name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="email1">
+      <AttrNames>
+        <Item Value="createEmployee_email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="salary1">
+      <AttrNames>
+        <Item Value="createEmployee_salary"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="hiredate">
+      <AttrNames>
+        <Item Value="createEmployee_hiredate"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="createEmployee1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="createEmployee"
+                  IsViewObjectMethod="false" DataControl="EmployeesManagement"
+                  InstanceName="data.EmployeesManagement.dataProvider"
+                  ReturnName="data.EmployeesManagement.methodResults.createEmployee_EmployeesManagement_dataProvider_createEmployee_result">
+      <NamedData NDName="name" NDValue="#{bindings.name1.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="email" NDValue="#{bindings.email1.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="salary" NDValue="#{bindings.salary1.inputValue}" NDType="int"/>
+      <NamedData NDName="hiredate" NDValue="#{bindings.hiredate.inputValue}" NDType="java.util.Date"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

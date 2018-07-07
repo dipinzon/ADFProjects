@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InterestingPoints"
+  Version="12.1.2.62.39"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="INTERESTING_POINTS"
+  AliasName="InterestingPoints"
+  BindingStyle="OracleName"
+  RowClass="oracle.summit.base.SummitEntityImpl">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="INTERESTING_POINTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Coordinates"
+    Domain="oracle.summit.model.domains.PointType"
+    ColumnName="COORDINATES"
+    SQLType="STRUCT"
+    Type="oracle.summit.model.domains.common.PointType"
+    ColumnType="POINT_TYPE"
+    TableName="INTERESTING_POINTS"/>
+  <Attribute
+    Name="Description"
+    Precision="20"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTERESTING_POINTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC005434426"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005434426"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.summit.model.domains.InterestingPoints.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>
